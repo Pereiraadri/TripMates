@@ -1,0 +1,15 @@
+.card-groupe-container {
+    border: solid $sunset !important;
+    background-color: $light-beige !important;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-card);
+    margin: 16px;
+}
+.groupe-name-card {
+  display: flex;
+  justify-content: flex-end;
+}
+.row {
+  display: inline-table;
+}
