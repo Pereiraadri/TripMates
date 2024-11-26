@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:new, :create, :show, :destroy]
   resources :polls, only: [:show] do
-    resources :choices, only: [:create]
+    resources :choices, only: [:new, :create]
   end
   resources :choices, only: [:update, :destroy] do
     resources :votes, only: [:create]
