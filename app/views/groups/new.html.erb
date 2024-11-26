@@ -1,9 +1,8 @@
-<%= link_to "Créer un groupe", new_group_path %>
-
-<% if @group.errors.any? %>
-  <ul>
-    <% @group.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<%= form_with model: @group do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :cover_banner %>
+  <%= f.submit %>
 <% end %>

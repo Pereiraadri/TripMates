@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "groups#index"
 
-  resources :groups, only: [:new, :create, :show, :destroy]
+  resources :groups, only: [:new, :create, :show, :destroy] do
+    collection do
+      get :invite, to: 'groups#join_by_invite', as: :invite # GET /groups/invite?invite_token=abc123
+    end
+  end
+
   resources :polls, only: [:show] do
     resources :choices, only: [:new, :create]
   end
