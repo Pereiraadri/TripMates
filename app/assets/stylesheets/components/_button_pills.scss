@@ -1,0 +1,21 @@
+.button-pill {
+border-radius: 60px;
+box-shadow: var(--box-shadow-button);
+border: none;
+color: $light-beige;
+font-family: $body-font;
+font-weight: bold;
+padding: 8px;
+
+&.medium-green {
+  background-color: $medium-green;
+}
+
+&.peach {
+  background-color: $peach;
+}
+
+&.sunset {
+  background-color: $sunset;
+}
+}
