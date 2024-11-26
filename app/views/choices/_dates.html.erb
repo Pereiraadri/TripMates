@@ -1,6 +1,7 @@
 <h1>dates test</h1>
-<%= simple_form_for do|f| %>
-<%= f.input :opening_date,
+<%= simple_form_for [@poll, @choice] do|f| %>
+<%= f.input :answer,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
+<%= f.submit %>
 <% end %>
