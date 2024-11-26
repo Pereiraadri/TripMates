@@ -5,7 +5,10 @@ border: none;
 color: $light-beige;
 font-family: $body-font;
 font-weight: bold;
-padding: 8px;
+padding-left: 32px;
+padding-right: 8px;
+padding-top: 4px;
+padding-bottom: 4px;
 
 &.medium-green {
   background-color: $medium-green;
@@ -18,4 +21,9 @@ padding: 8px;
 &.sunset {
   background-color: $sunset;
 }
+}
+
+.right-arrow {
+  color: $light-beige;
+  padding-left: 4px;
 }
