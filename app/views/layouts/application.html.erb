@@ -22,6 +22,8 @@
       <container class="main container-fluid">
         <%= render "layouts/header" %>
         <%= render "shared/flashes" %>
+
+      <%= yield %>
         <%# test carte groupe %>
         <%# <div class="card"> %>
           <%= render "groups/card" %>
