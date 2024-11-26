@@ -2,8 +2,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
-
-    @groups = @groups.where()
+    @groups = current_user.groups
   end
 
   def create
