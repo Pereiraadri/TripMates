@@ -17,10 +17,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
+
   <body>
-    <container class="main container-fluid">
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
+      <container class="main container-fluid">
+        <%= render "layouts/header" %>
+        <%= render "shared/flashes" %>
+  <body>
 
       <%= yield %>
       <div class="footer w-100 d-flex justify-content-between">
