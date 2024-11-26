@@ -1,2 +1,6 @@
 <%# liste des choices (choix des users) + lien vers la new de choice %>
 <%# ensuite => overlay %>
+
+
+<%= link_to "Ajouter un nouveau choix", new_poll_choice_path(@poll) %>
+<h1><%= @poll.title %></h1>

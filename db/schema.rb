@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_25_144700) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_26_145022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,13 +31,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_25_144700) do
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "invite_token"
+    t.index ["invite_token"], name: "index_groups_on_invite_token", unique: true
     t.index ["owner_id"], name: "index_groups_on_owner_id"
   end
 
   create_table "polls", force: :cascade do |t|
     t.string "title"
-    t.integer "category", default: 0, null: false
-    t.integer "state", default: 0, null: false
+    t.string "kind"
+    t.string "state"
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

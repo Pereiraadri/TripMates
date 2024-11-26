@@ -1,7 +1,12 @@
 <h1>Liste des groupes</h1>
 
+<%  @groups.each do |group| %>
+  <%= group.title %>
+<% end %>
 <button type="button" class="button-pill medium-green">Base class</button>
 
 <button type="button" class="button-pill peach">Base class</button>
 
 <button type="button" class="button-pill sunset">Base class</button>
+
+<button type ="button" class="button-pill sunset"><%= link_to "Créer un groupe", new_group_path %></p>
