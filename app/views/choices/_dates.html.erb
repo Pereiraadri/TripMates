@@ -1,1 +1,6 @@
 <h1>dates test</h1>
+<%= form_with do|f| %>
+<%= f.input :opening_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+<% end %>
