@@ -4,3 +4,6 @@
 <%= render "card_hebergement" %>
 
 <button type="button" class="button-pill sunset"><%= link_to "Ajouter un nouveau choix", new_poll_choice_path(@poll) %> <i class="right-arrow fa-regular fa-circle-right"></i></button>
+
+<%= link_to "Ajouter un nouveau choix", new_poll_choice_path(@poll) %>
+<h1><%= @poll.title %></h1>
