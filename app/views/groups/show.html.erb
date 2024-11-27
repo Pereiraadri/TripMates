@@ -1,6 +1,3 @@
-
-
-<!-- app/views/groups/show.html.erb -->
 <h1><%= @group.title %></h1>
 <p><%= @group.description %></p>
 
@@ -20,3 +17,18 @@
     Copier le lien d'invitation
   </button>
 </div>
+
+
+<!-- app/views/groups/show.html.erb -->
+<h1><%= @group.title %></h1>
+<p><%= @group.description %></p>
+
+<% if current_user == @group.owner %>
+  <h3>Inviter des membres :</h3>
+  <%= button_to 'Générer un lien d\'invitation', send_invite_group_path(@group), method: :post %>
+<% end %>
+
+<!-- Afficher le lien d'invitation s'il est dans flash -->
+<% if flash[:notice] %>
+  <p><strong>Voici votre lien d'invitation :</strong> <%= flash[:notice] %></p>
+<% end %>
