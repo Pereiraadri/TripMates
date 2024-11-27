@@ -19,19 +19,18 @@
 
 
   <body>
-      <container class="main container-fluid">
+  <div class="main-container container-fluid">
         <%= render "layouts/header" %>
         <%= render "shared/flashes" %>,
 
       <%= yield %>
         <%# test carte groupe %>
         <%# <div class="card"> %>
-          <%= render "groups/card" %>
         <%# </div> %>
         <%# fin de test carte groupe  %>
-      <div class="footer w-100 d-flex justify-content-between">
+      <div class="footer" style="max-width: 810px;">
         <%= render "layouts/footer" %>
       </div>
-  </container>
+  </div>
   </body>
 </html>
