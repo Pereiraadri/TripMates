@@ -1,6 +1,6 @@
 <%# liste des choices (choix des users) + lien vers la new de choice %>
 <%# ensuite => overlay %>
-<div class="container-card-hebergement">
+<div class="container-card">
   <h1 class="title"><%= @poll.title %></h1>
 
 
@@ -12,5 +12,6 @@
     <%= render "choices/cards/#{@poll.category}", choice: choice %>
   <% end %>
 
-
 </div>
+
+<%= render "choices/cards/dates" %>
