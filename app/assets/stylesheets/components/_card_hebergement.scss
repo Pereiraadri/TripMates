@@ -9,6 +9,7 @@
   .card-card {
     display: flex;
     align-items: center;
+    position: relative;
   }
   .card-body {
     margin: 12px;
@@ -39,11 +40,24 @@
 }
 
 .drag {
+  display: flex;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+
   .drag-icon {
     font-size: 20px;
     color: $sunset;
     display: flex;
     justify-content: center;
+    background-color: white;
+    margin: auto;
+
+    &:hover{
+      cursor: move;
+    }
   }
 }
 .image-card {
