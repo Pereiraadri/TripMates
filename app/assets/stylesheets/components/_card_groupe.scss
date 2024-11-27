@@ -1,17 +1,15 @@
-.card {
+.border-sunset {
   border: solid #ff8c00 !important;
   background-color: $light-beige !important;
   padding: 12px;
   border-radius: 4px;
   box-shadow: var(--box-shadow-card);
-  margin: 16px;
+  margin: 2px;
   align-self: flex-start;
 }
-
-// .border-sunset {
-//   border-color: #ff8c00 !important;
-// }
 .card-body-groupe {
+  padding: 12px;
+  margin: 16px;
   text-align: end;
   font-family: $body-font !important;
 
