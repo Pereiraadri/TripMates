@@ -5,6 +5,12 @@
 
   <%= render "card_hebergement" %>
 
+<%= render "choices/#{@poll.category}", choice: Choice.new, poll: @poll %>
+
+<% @poll.choices.each do |choice|%>
+  <%= choice.answer %>
+<% end %>
+  
   <div class="button d-flex justify-content-center">
     <%= link_to new_poll_choice_path(@poll), class: "button-pill sunset" do %>
     Ajouter un nouveau choix
