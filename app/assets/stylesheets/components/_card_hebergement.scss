@@ -42,13 +42,14 @@
 .drag {
   display: flex;
   position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: -12px;
+  height: 100%;
+  width: fit-content;
 
   .drag-icon {
-    box-shadow: var(--box-shadow-card);
+    box-shadow: var(--box-shadow-hard);
     font-size: 20px;
     color: $sunset;
     display: flex;
