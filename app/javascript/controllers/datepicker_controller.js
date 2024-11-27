@@ -8,10 +8,8 @@ export default class extends Controller {
   connect() {
     flatpickr(this.element)
     minDate: "today"
-    console.log("cc");
-
-    const bookingForm = document.getElementById('booking-form-div');
-    if (bookingForm) {
+    const dateForm = dateTarget;
+    if (dateForm) {
       flatpickr("#range_start", {
         plugins: [new rangePlugin({ input: "#range_end" })],
         minDate: "today",
