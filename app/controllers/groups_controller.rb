@@ -3,11 +3,11 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
-    @groups = current_user.groups
+    #@groups = current_user.groups
   end
 
   def create
-    @group = Group.new
+    @group = Group.new(group_params)
     @group.owner = current_user
     if @group.save
       redirect_to group_path(@group), notice: "Le groupe a été créé."
@@ -28,11 +28,17 @@ class GroupsController < ApplicationController
   def destroy
   end
 
+  def send_invite
+    invite_url = group_join_url(@group.invite_token)
+    flash[:notice] = "Le lien d'invitation est : #{invite_url}"
+    redirect_to group_path(@group)
+  end
+
   def join_by_invite
     @group = Group.find_by(invite_token: params[:invite_token])
     if @group.present?
       UserGroup.create(user: current_user, group: @group)
-      redirect_to group_path(@group), notice: "Bienvenue, commence à voter"
+      redirect_to group_path(@group), notice: "Bienvenue dans le groupe, commence à voter"
     else
       redirect_to root_path, alert: "Aucun groupe avec ce token n'existe"
     end
@@ -43,5 +49,9 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def group_params
+  params.require(:group).permit(:title, :description, :cover_banner)
   end
 end

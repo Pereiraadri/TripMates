@@ -1,6 +1,3 @@
-
-
-<!-- app/views/groups/show.html.erb -->
 <h1><%= @group.title %></h1>
 <p><%= @group.description %></p>
 
@@ -10,8 +7,6 @@
     <li><%= member.email %></li>
   <% end %>
 </ul>
-
-
 
 <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
   <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
