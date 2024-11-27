@@ -1,0 +1,3 @@
+<%= simple_form_for [poll, choice] do |f| %>
+   <%= f.input :answer, label: "Choisi ton budget.", as: :range, prompt: "my data", collection: 0..45 %>
+<% end %>
