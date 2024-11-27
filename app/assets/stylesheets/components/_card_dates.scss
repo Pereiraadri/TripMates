@@ -16,13 +16,13 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+
     }
 
     .card-title {
       font-family: $body-font;
       font-weight: bold;
       color: $sunset;
-      text-align: center;
     }
 
     .text-dates {
@@ -32,9 +32,14 @@
 
     .card-medium-text {
       width: 88px;
+      color: $sunset;
+      font-size: 16px;
+      font-weight: bolder;
     }
     .card-small-text {
       width: 88px;
+      color: $sunset;
+      font-size: 16px;
     }
 
   }
@@ -43,13 +48,11 @@
     display: flex;
     // justify-content: space-evenly;
     gap: 32px;
-    font-size: 16px;
   }
 
   .small-text {
     display: flex;
     gap: 32px;
-    // justify-content: space-evenly;
   }
 
 .img-fluid {

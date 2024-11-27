@@ -1,12 +1,15 @@
-.border-sunset {
-  border: solid #ff8c00 !important;
-  background-color: $light-beige !important;
-  padding: 12px;
-  border-radius: 4px;
-  box-shadow: var(--box-shadow-card);
-  margin: 2px;
-  align-self: flex-start;
+.card-groupe-container {
+  .border-orange {
+    border: solid #ff8c00 !important;
+    background-color: $light-beige !important;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-card);
+    margin: 2px;
+    align-self: flex-start;
+  }
 }
+
 .card-body-groupe {
   padding: 12px;
   margin: 16px;
