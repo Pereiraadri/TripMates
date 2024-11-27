@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_26_145022) do
 
   create_table "polls", force: :cascade do |t|
     t.string "title"
-    t.integer "category", default: 0, null: false
-    t.integer "state", default: 0, null: false
+    t.string "kind"
+    t.string "state"
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

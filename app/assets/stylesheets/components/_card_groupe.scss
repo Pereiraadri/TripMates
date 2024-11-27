@@ -1,15 +1,28 @@
-.card-groupe-container {
-    border: solid $sunset !important;
-    background-color: $light-beige !important;
-    padding: 12px;
-    border-radius: 4px;
-    box-shadow: var(--box-shadow-card);
-    margin: 16px;
+.card {
+  border: solid #ff8c00 !important;
+  background-color: $light-beige !important;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow-card);
+  margin: 16px;
+  align-self: flex-start;
 }
-.groupe-name-card {
-  display: flex;
-  justify-content: flex-end;
+
+// .border-sunset {
+//   border-color: #ff8c00 !important;
+// }
+.card-body {
+  text-align: end;
+  font-family: $body-font !important;
+
+  .text-muted {
+    color: $peach !important;
+      }
 }
-.row {
-  display: inline-table;
+.card-title {
+  color: $peach !important;
+  font-weight: bold;
+}
+.text-orange {
+  color: #ff8c00 !important;
 }
