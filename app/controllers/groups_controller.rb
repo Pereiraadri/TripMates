@@ -45,3 +45,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 end
+
+def group_params
+  params.require(:group).permit(:title, :description, :cover_banner)
+end
