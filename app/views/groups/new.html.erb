@@ -1,22 +1,29 @@
-<div class="container">
+<div class="container d-flex text-center justify-content-center">
 <%= form_with model: @group do |f| %>
-  <div class="name-trip d-flex justify-content-center">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="name-trip">
+    <%= f.label :title, value: "Nom du groupe"%>
+    <div class="name-trip-banner">
+    <%= f.text_field :title, placeholder: "Nom du Groupe" %>
+    </div>
   </div>
   <div class="group-description">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <div class="group-description-banner">
+    <%= f.text_field :description, placeholder: "Décris ton groupe" %>
+    </div>
   </div>
-  <div class="group-image">
-    <%= f.label :cover_banner %>
+  <div class="group-image mb-16">
+    <%= f.label :cover_banner, value: "Photo du Groupe" %>
+    <div class="banner-image">
     <%= f.file_field :cover_banner, class: 'form-text' %>
+    </div>
   </div>
-
   <%# bouton creer  %>
   <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill medium-green">
         Créer
+         <%= link_to new_group_path, class: "icon-link" do %>
+      <% end %>
         <i class="right-arrow fa-regular fa-circle-right"></i>
       </button>
     </div>
