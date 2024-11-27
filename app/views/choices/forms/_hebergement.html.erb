@@ -1,1 +1,11 @@
-form for hebergeemnt
+<%= simple_form_for [poll, choice] do |f| %>
+  <%= f.input :answer, label: "Rentre ton URL." %>
+
+  <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill sunset">
+        Ajouter un nouveau choix
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
+
+<% end %>
