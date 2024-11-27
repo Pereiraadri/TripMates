@@ -21,7 +21,6 @@
 
 
 
-
 <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
   <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
   <button type="button" class="btn btn-light shadow-sm" data-action="clipboard#copy" data-clipboard-target="button">
