@@ -3,18 +3,14 @@
 <div class="container-card-hebergement">
   <h1 class="title"><%= @poll.title %></h1>
 
-  <%= render "card_hebergement" %>
 
-<%= render "choices/#{@poll.category}", choice: Choice.new, poll: @poll %>
+  <% if user_signed_in? && @poll.group.owner == current_user %>
+    <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+  <% end %>
 
-<% @poll.choices.each do |choice|%>
-  <%= choice.answer %>
-<% end %>
-  
-  <div class="button d-flex justify-content-center">
-    <%= link_to new_poll_choice_path(@poll), class: "button-pill sunset" do %>
-    Ajouter un nouveau choix
-    <i class="right-arrow fa-regular fa-circle-right"></i>
-    <% end %>
-  </div>
+  <% @poll.choices.each do |choice|%>
+    <%= render "choices/cards/#{@poll.category}", choice: choice %>
+  <% end %>
+
+
 </div>

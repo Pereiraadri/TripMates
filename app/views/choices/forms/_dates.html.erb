@@ -1,0 +1,14 @@
+<h1>dates test</h1>
+  <%= simple_form_for [poll, choice], data: { controller: 'datepicker'} do|f| %>
+    <%= f.input :answer,
+                as: :string,
+                input_html: { id: 'range_start', data: { controller: "datepicker" } } %>
+
+    <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill sunset">
+        Ajouter un nouveau choix
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
+
+  <% end %>
