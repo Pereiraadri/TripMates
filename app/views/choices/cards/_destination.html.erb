@@ -1,1 +1,5 @@
 <h1>destination test</h1>
+<%= simple_form_for [poll, choice] do |f| %>
+  <%= f.input :answer, label: "Ajoute ta destination." %>
+  <%= f.submit %>
+<% end %>
