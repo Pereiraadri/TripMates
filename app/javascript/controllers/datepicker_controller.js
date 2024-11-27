@@ -5,10 +5,7 @@ import flatpickr from "flatpickr";
 export default class extends Controller {
 
   connect() {
-    console.log('coucou')
     minDate: "today"
-    console.log("cc");
-
     const bookingForm = this.element
     if (bookingForm) {
       flatpickr("#range_start", {
