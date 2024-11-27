@@ -1,6 +1,6 @@
 class Poll < ApplicationRecord
   belongs_to :group
-  has_many :choices
+  has_many :choices, dependent: :destroy
   enum category: {
     budget: 0,
     dates: 10,

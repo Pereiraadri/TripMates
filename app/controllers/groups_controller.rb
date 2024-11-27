@@ -23,6 +23,10 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @members = @group.users
+    @budget_poll = @group.polls.find_by(category: 0)
+    @destination_poll = @group.polls.find_by(category: 20)
+    @dates_poll = @group.polls.find_by(category: 10)
   end
 
   def destroy
@@ -52,6 +56,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-  params.require(:group).permit(:title, :description, :cover_banner)
+  params.require(:group).permit(:title, :description, :cover_banner, :category)
   end
 end
