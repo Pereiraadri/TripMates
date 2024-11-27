@@ -6,3 +6,7 @@
 <%  @groups.each do |group| %>
   <%= group.title %>
 <% end %>
+
+<div class="create-group-link">
+  <%= link_to 'Créer un groupe', new_group_path, class: 'btn btn-primary' %>
+</div>

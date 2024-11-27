@@ -21,7 +21,7 @@
   <body>
       <container class="main container-fluid">
         <%= render "layouts/header" %>
-        <%= render "shared/flashes" %>
+        <%= render "shared/flashes" %>,
 
       <%= yield %>
         <%# test carte groupe %>
@@ -29,7 +29,6 @@
           <%= render "groups/card" %>
         <%# </div> %>
         <%# fin de test carte groupe  %>
-       <%= yield %>
       <div class="footer w-100 d-flex justify-content-between">
         <%= render "layouts/footer" %>
       </div>
