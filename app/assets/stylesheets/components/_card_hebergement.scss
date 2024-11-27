@@ -29,7 +29,7 @@
   }
 }
 
-.small-text {
+.small-text-heb {
   display: flex;
   justify-content: space-between;
 }
@@ -42,21 +42,24 @@
 .drag {
   display: flex;
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 0;
   right: 0;
   width: 100%;
 
   .drag-icon {
+    box-shadow: var(--box-shadow-card);
     font-size: 20px;
     color: $sunset;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: $light-beige;
     margin: auto;
+    padding: 2px 4px;
+    border-radius: 50%;
 
     &:hover{
-      cursor: move;
+      cursor: grabbing;
     }
   }
 }
