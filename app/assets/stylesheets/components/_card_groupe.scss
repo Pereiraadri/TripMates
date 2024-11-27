@@ -1,15 +1,26 @@
-.card-groupe-container {
-    border: solid $sunset !important;
-    background-color: $light-beige !important;
-    padding: 12px;
-    border-radius: 4px;
-    box-shadow: var(--box-shadow-card);
-    margin: 16px;
+.border-sunset {
+  border: solid #ff8c00 !important;
+  background-color: $light-beige !important;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow-card);
+  margin: 2px;
+  align-self: flex-start;
 }
-.groupe-name-card {
-  display: flex;
-  justify-content: flex-end;
+.card-body-groupe {
+  padding: 12px;
+  margin: 16px;
+  text-align: end;
+  font-family: $body-font !important;
+
+  .text-muted {
+    color: $peach !important;
+      }
 }
-.row {
-  display: inline-table;
+.card-title-groupe {
+  color: $peach !important;
+  font-weight: bold;
+}
+.text-orange {
+  color: #ff8c00 !important;
 }

@@ -1,13 +1,8 @@
-<h1 class="title">Liste des groupes</h1>
-<div class="button w-100">
-<%= render "/shared/button_pills" %>
-</div>
+<%= render "groups/card" %>
+<%= render "groups/card" %>
+<%= render "groups/card" %>
 
-  <%= render "groups/card" %>
+
 <%  @groups.each do |group| %>
   <%= group.title %>
 <% end %>
-
-<div class="create-group-link">
-  <%= link_to 'Créer un groupe', new_group_path, class: 'btn btn-primary' %>
-</div>

@@ -1,9 +1,24 @@
+<div class="container">
 <%= form_with model: @group do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :cover_banner %>
-  <%= f.file_field :cover_banner, class: 'form-text' %>
-  <%= f.submit %>
+  <div class="name-trip d-flex justify-content-center">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="group-description">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="group-image">
+    <%= f.label :cover_banner %>
+    <%= f.file_field :cover_banner, class: 'form-text' %>
+  </div>
+
+  <%# bouton creer  %>
+  <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill medium-green">
+        Créer
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
 <% end %>
+</div>
