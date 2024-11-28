@@ -1,9 +1,24 @@
+<div class="main-container cont-group-show">
+  <h1 class="title"><%= @group.title %></h1>
 
-<h1 class="title"><%= @group.title %></h1>
-<p><%= @group.description %></p>
 
-<h2>Membres actuels</h2>
+  <div class="cover">
+    <% if @group.cover_banner.attached? %>
+    <%= cl_image_tag @group.cover_banner.key, class: "cover-group-image" %>
+    <% end %>
+  </div>
 
+  <div class="members">
+    <h5 class="title">Membres actuels</h5>
+      <ul>
+        <% @members.each do |member| %>
+          <li>
+              <% if member.avatar.attached? %>
+                <%= image_tag member.avatar.variant(resize_to_limit: [50, 50]), alt: "#{member.name}'s avatar", class: "avatar" %>
+              <% else %>
+                <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar" %>
+              <% end %>
+          </li>
 <ul>
   <% @members.each do |member| %>
     <li>
@@ -12,16 +27,53 @@
         <% else %>
           <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar" %>
         <% end %>
-    </li>
-  <% end %>
-</ul>
+      </ul>
+  </div>
+
+  <container class="text-cont">
+    <div class="container-card-group-description">
+      <p class="desc"><%= @group.description %></p>
+    </div>
+  </container>
 
 
-  <% if @group.cover_banner.attached? %>
-  <%= cl_image_tag @group.cover_banner.key %>
-  <% end %>
+  <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
+    <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
+    <button type="button" class="btn btn-light shadow-sm" data-action="clipboard#copy" data-clipboard-target="button">
+      <i class="fa-regular fa-copy"></i>
+      Copier le lien d'invitation
+    </button>
+  </div>
 
+  <div class="go-to-polls">
+    <div class="grid">
 
-<%= link_to "Budget", poll_path(@budget_poll) %>
-<%= link_to "Destination", poll_path(@destination_poll) %>
-<%= link_to "Dates", poll_path(@dates_poll) %>
+      <div class="row-icon">
+        <div class="budget-poll-button">
+          <%= link_to poll_path(@budget_poll), class: "icon-link" do %>
+          <i class="fa-solid fa-sack-dollar"></i>
+          <% end %>
+        </div>
+
+        <div class="destination-poll-button">
+          <%= link_to poll_path(@destination_poll), class: "icon-link" do %>
+          <i class="fa-solid fa-umbrella-beach"></i>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row-icon">
+          <div class="dates-poll-button">
+            <%= link_to poll_path(@dates_poll), class: "icon-link" do %>
+            <i class="fa-solid fa-calendar"></i>
+            <% end %>
+          </div>
+
+          <div class="house-poll-button">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
