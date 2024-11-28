@@ -1,0 +1,87 @@
+.card-box {
+    background-color: $light-beige;
+    border-radius: 12px;
+    border: solid 2px $sunset;
+    margin: 16px;
+    box-shadow: var(--box-shadow-card);
+
+    .card-card {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .card-body {
+      margin: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+    }
+
+    .card-title {
+      font-family: $body-font;
+      font-weight: bold;
+      color: $sunset;
+    }
+
+    .text-dates {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-medium-text {
+      width: 88px;
+      color: $sunset;
+      font-size: 16px;
+      font-weight: bolder;
+    }
+    .card-small-text {
+      width: 88px;
+      color: $sunset;
+      font-size: 16px;
+    }
+
+  }
+
+  .medium-text {
+    display: flex;
+    // justify-content: space-evenly;
+    gap: 32px;
+  }
+
+  .small-text {
+    display: flex;
+    gap: 32px;
+  }
+
+.img-fluid {
+  margin: 12px;
+  align-self: center;
+}
+
+.image-card {
+  .user-pic {
+    text-align: center;
+    color: $dark-blue;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+}
+
+.check-box {
+  .check-box-empty {
+    text-align: center;
+    color: $sunset;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+}
+
+.link {
+  text-decoration: none;
+}

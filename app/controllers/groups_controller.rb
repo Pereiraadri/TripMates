@@ -7,17 +7,29 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(title: "Nouveau groupe")
     @group.owner = current_user
     @group.users << current_user
     if @group.save
-      redirect_to group_path(@group), notice: "Le groupe a été créé."
+      redirect_to edit_group_path(@group), notice: "Le groupe a été créé."
     else
       flash[:alert] = "Le groupe n'a pas été créé."
-      render :new, status: :unprocessable_entity
+      redirect_to root_path
     end
   end
 
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to group_path(@group)
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @group = Group.find(params[:id])
+  end
   def new
     @group = Group.new
   end
@@ -58,6 +70,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-  params.require(:group).permit(:title, :description, :cover_banner, :category)
+  params.require(:group).permit(:title, :description, :cover_banner)
   end
 end

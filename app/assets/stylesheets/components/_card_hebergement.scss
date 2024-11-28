@@ -1,7 +1,7 @@
 .card-hebergement {
   .card-box {
     background-color: $light-beige;
-    border-radius: 4px;
+    border-radius: 12px;
     border: solid 2px $sunset;
     margin: 16px;
     box-shadow: var(--box-shadow-card);
@@ -29,7 +29,7 @@
   }
 }
 
-.small-text {
+.small-text-heb {
   display: flex;
   justify-content: space-between;
 }
@@ -42,21 +42,25 @@
 .drag {
   display: flex;
   position: absolute;
-  top: -10px;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: -12px;
+  height: 100%;
+  width: fit-content;
 
   .drag-icon {
+    box-shadow: var(--box-shadow-hard);
     font-size: 20px;
     color: $sunset;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: $light-beige;
     margin: auto;
+    padding: 2px 4px;
+    border-radius: 50%;
 
     &:hover{
-      cursor: move;
+      cursor: grabbing;
     }
   }
 }

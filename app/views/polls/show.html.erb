@@ -1,16 +1,34 @@
 <%# liste des choices (choix des users) + lien vers la new de choice %>
 <%# ensuite => overlay %>
-<div class="container-card-hebergement">
+<div class="container-card">
   <h1 class="title"><%= @poll.title %></h1>
 
 
   <% if user_signed_in? && @poll.group.owner == current_user %>
-    <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+      <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+      <% @poll.choices.each do |choice|%>
+        <%= render "choices/cards/#{@poll.category}", choice: choice %>
+      <% end %>
+  <% else %>
+    <% @poll.choices.each do |choice|%>
+      <%= render "choices/cards/#{@poll.category}", choice: choice %>
+    <% end %>
+    <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill sunset">
+        Valider mon vote.
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
   <% end %>
-
-  <% @poll.choices.each do |choice|%>
-    <%= render "choices/cards/#{@poll.category}", choice: choice %>
-  <% end %>
-
 
 </div>
+
+<%= form_with url: choice_votes_path(:choice_id), method: :post do %>
+  <% @poll.choices.each do |choice| %>
+    <div>
+      <%= radio_button_tag "choice_id", choice.id %>
+      <%= choice.answer %>
+    </div>
+  <% end %>
+  <%= submit_tag "Vote" %>
+<% end %>
