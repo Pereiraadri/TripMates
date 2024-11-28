@@ -5,13 +5,20 @@
 
 
   <% if user_signed_in? && @poll.group.owner == current_user %>
-    <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
-  <% end %>
-
-  <% @poll.choices.each do |choice|%>
-    <%= render "choices/cards/#{@poll.category}", choice: choice %>
+      <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+      <% @poll.choices.each do |choice|%>
+        <%= render "choices/cards/#{@poll.category}", choice: choice %>
+      <% end %>
+  <% else %>
+    <% @poll.choices.each do |choice|%>
+      <%= render "choices/cards/#{@poll.category}", choice: choice %>
+    <% end %>
+    <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill sunset">
+        Valider mon vote.
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
   <% end %>
 
 </div>
-
-<%= render "choices/cards/dates" %>
