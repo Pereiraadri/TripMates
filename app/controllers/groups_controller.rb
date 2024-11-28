@@ -2,13 +2,14 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show]
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
     #@groups = current_user.groups
   end
 
   def create
     @group = Group.new(title: "Nouveau groupe")
     @group.owner = current_user
+    @group.users << current_user
     if @group.save
       redirect_to edit_group_path(@group), notice: "Le groupe a été créé."
     else
@@ -36,6 +37,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @members = @group.users
+    @owner = @group.owner
     @budget_poll = @group.polls.find_by(category: 0)
     @destination_poll = @group.polls.find_by(category: 20)
     @dates_poll = @group.polls.find_by(category: 10)
