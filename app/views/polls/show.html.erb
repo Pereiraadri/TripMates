@@ -23,12 +23,13 @@
 
 </div>
 
-<%= form_with url: choice_votes_path(:choice_id), method: :post do %>
-  <% @poll.choices.each do |choice| %>
+
+<%= simple_form_for Vote.new, url: choice_votes_path(:choice_id), method: :post do |f| %>
+  <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
     <div>
-      <%= radio_button_tag "choice_id", choice.id %>
-      <%= choice.answer %>
+      <%= b.radio_button %>
+      <%= b.label %>
     </div>
   <% end %>
-  <%= submit_tag "Vote" %>
+  <%= f.submit "Vote" %>
 <% end %>
