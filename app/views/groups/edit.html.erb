@@ -3,20 +3,22 @@
     <div class="name-trip">
       <%= f.label :title, value: "Nom du groupe"%>
       <div class="name-trip-banner">
-        <%= f.text_field :title, placeholder: "Nom du Groupe", class: "rounded-input" %>
+        <%= f.text_field :title, placeholder: "Nickoumouk", class: "rounded-input" %>
       </div>
     </div>
     <div class="group-description">
       <%= f.label :description %>
       <div class="group-description-banner expanded-textarea">
-        <%= f.text_field :description, placeholder: "Décris ton groupe",rows: 4, class: "rounded-input" %>
+        <%= f.text_field :description, placeholder: "Décris ton groupe", class: "rounded-input" %>
       </div>
     </div>
     <div class="group-image mb-16">
       <%= f.label :cover_banner, value: "Photo du Groupe"%>
       <div class="banner-image">
         <div class="picture-choice text-center">
-          <%= f.file_field :cover_banner, class: 'form-text' %>
+          <%= f.file_field :cover_banner, input_html: { class: 'form-text'} %>
+          <%# <%= f.input :image, label:false, input_html: { class: 'form-text'}, as: :file %>
+
         </div>
 
       </div>

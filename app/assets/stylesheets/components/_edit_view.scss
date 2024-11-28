@@ -1,0 +1,59 @@
+.name-trip {
+  font-family: helvetica !important;
+  color: $sunset !important;
+  font-weight: bold;
+  margin-bottom: 16px;
+
+}
+.group-description {
+  font-family: helvetica !important;
+  color: $sunset !important;
+  margin: 0px;
+  font-weight: bold;
+}
+.group-image {
+  font-family: helvetica !important;
+  color: $sunset !important;
+  margin: 16px;
+  font-weight: bold;
+
+ }
+  // .name-trip-banner {
+  //   color: $medium-green !important;
+  // }
+  //  .group-description-banner {
+  //    color: $medium-green !important;
+// }
+
+ .rounded-input {
+  border-radius: 12px;
+  border: solid $sunset !important;
+  background-color: $light-beige;
+  font-family: $body-font !important;
+  color: $sunset !important;
+  margin: 4px;
+}
+
+// .form-text::placeholder, select.form-text, .form-text, .form-text::file-selector-button {
+//    font-weight: bold;
+//    font-family: "Poppins", serif;
+//    color: $sunset !important;
+//    text-align: center;
+//    border-radius: 50px;
+//  }
+
+//////////////////// Lien copier coller /////////////////////
+.invitation-link {
+  border: none;
+}
+.lien-invitation {
+  background-color: $light-beige !important;
+}
+.fa-copy {
+  color: $medium-green;
+}
+.shadow-sm {
+  color:$sunset;
+  background-color: $light-beige;
+}
+/////////////////////////////////////////////////////////////
