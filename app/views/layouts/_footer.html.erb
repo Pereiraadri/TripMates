@@ -6,7 +6,7 @@
 
 <% if current_page?(root_path)%>
 <div class="back">
- <%= link_to new_group_path, class: "icon-link" do %>
+ <%= button_to groups_path, method: :post, class: "icon-link" do %>
     <i class="fa-solid fa-circle-plus"></i>
   <% end %>
 </div>
