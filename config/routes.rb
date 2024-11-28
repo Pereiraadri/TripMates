@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'users/registrations'}
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "groups#index"
 
-  resources :groups, only: [:new, :create, :show, :destroy] do
+  resources :groups do
     member do
       post :send_invite
       get 'join_by_invite/:invite_token', to: 'groups#join_by_invite', as: 'join_by_invite'

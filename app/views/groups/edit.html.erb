@@ -1,0 +1,40 @@
+<div class="container d-flex text-center justify-content-center">
+  <%= form_with model: @group, method: :patch do |f| %>
+    <div class="name-trip">
+      <%= f.label :title, value: "Nom du groupe"%>
+      <div class="name-trip-banner">
+        <%= f.text_field :title, placeholder: "Nom du Groupe", class: "rounded-input" %>
+      </div>
+    </div>
+    <div class="group-description">
+      <%= f.label :description %>
+      <div class="group-description-banner expanded-textarea">
+        <%= f.text_field :description, placeholder: "Décris ton groupe",rows: 4, class: "rounded-input" %>
+      </div>
+    </div>
+    <div class="group-image mb-16">
+      <%= f.label :cover_banner, value: "Photo du Groupe"%>
+      <div class="banner-image">
+        <div class="picture-choice text-center">
+          <%= f.file_field :cover_banner, class: 'form-text' %>
+        </div>
+
+      </div>
+    </div>
+    <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
+      <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
+      <button type="button" class="btn btn-light shadow-sm" data-action="clipboard#copy" data-clipboard-target="button">
+        <i class="fa-regular fa-copy"></i>
+        Copier le lien d'invitation
+      </button>
+    </div>
+
+    <%# bouton creer  %>
+    <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill medium-green">
+        Créer
+          <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
+  <% end %>
+</div>
