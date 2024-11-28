@@ -1,16 +1,29 @@
- <div class="card-groupe-container mb-3 d-flex justify-content-center">
+<div class="card-groupe-container mb-3 d-flex justify-content-center">
   <div class="card bg-light border-sunset rounded-3 shadow-sm" style="max-width: 540px;">
     <div class="row g-0">
+      <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
       <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <img src="https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8Mg%3D%3D" class="img-fluid rounded-start" alt="...">
+          <% if group.cover_banner.attached? %>
+            <%= cl_image_tag group.cover_banner.key %>
+          <% end %>
       </div>
       <div class="col-md-8">
         <div class="card-body-groupe text-end">
-          <h5 class="card-title-groupe text-orange">Groupe Name</h5>
-          <p class="card-text text-orange"><small class="text-muted">12/02/25 - 24/02/25</small></p>
+
+          <p class="card-text text-orange">
+            <small class="text-muted">
+              <% group.users.each do |user| %>
+                <img
+                  src="<%= user.avatar.attached? ? url_for(user.avatar) : 'default_avatar.jpg' %>"
+                  class="rounded-circle me-2"
+                  width="32"
+                  height="32"
+                  alt="Avatar de <%= user.email %>">
+              <% end %>
+            </small>
+          </p>
           <div class="d-flex align-items-center justify-content-end">
-            <img src="user_avatar.jpg" class="rounded-circle me-2" width="32" height="32" alt="User Avatar">
-            <small class="text-orange">Nom de l'utilisateur</small>
+            <small class="text-orange">Membres du groupe</small>
           </div>
         </div>
       </div>
