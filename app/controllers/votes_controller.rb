@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
   def create
-    raise
     @choice = Choice.find(params[:choice_id])
     @vote = current_user.votes.build(choice: @choice)
 
