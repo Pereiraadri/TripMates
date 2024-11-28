@@ -4,6 +4,7 @@ class Group < ApplicationRecord
   has_many :users, through: :user_groups
   has_many :polls, dependent: :destroy
   has_one_attached :cover_banner
+  has_many :members, through: :user_groups, source: :user
 
   before_create :generate_invite_token
   after_create :create_polls
