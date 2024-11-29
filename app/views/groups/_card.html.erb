@@ -1,7 +1,7 @@
 <%= link_to group_path(group) do %>
- <div class="card-groupe-container">
+<div class="card-groupe-container">
   <div class="card border-orange" style="max-width: 810px;">
-      <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
+      <h5 class="title-index"><%= group.title %></h5>
       <div class="cover-group">
         <div class="cover-group-image">
         <% if group.cover_banner.attached? %>
@@ -11,6 +11,10 @@
       </div>
 
       <div class="card-body-groupe text-end">
+        <div class="index-medium-text">
+          <p class="index-card-medium-text"><small>Membres du groupe</small></p>
+        </div>
+
         <small class="text-muted">
           <ul>
           <% group.members.each do |member| %>
@@ -25,9 +29,6 @@
           </ul>
         </small>
 
-        <div class="dunno">
-          <small class="text-orange">Membres du groupe</small>
-        </div>
       </div>
     </div>
   </div>
