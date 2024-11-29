@@ -30,7 +30,7 @@
 
 
   <div class="container mt-4">
-  <h2 class="text-center text-primary">Résultats des sondages</h2>
+  <h2 class="title">Résultats des sondages</h2>
   <div class="row mt-4 g-3">
     <% @polls.each do |poll| %>
       <div class="col-6 col-md-3">
@@ -56,13 +56,6 @@
 
 
 
-  <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
-    <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
-    <button type="button" class="btn btn-light shadow-sm" data-action="clipboard#copy" data-clipboard-target="button">
-      <i class="fa-regular fa-copy"></i>
-      Copier le lien d'invitation
-    </button>
-  </div>
 
   <div class="go-to-polls">
     <div class="grid">
@@ -102,6 +95,14 @@
           </div>
       </div>
     </div>
+  </div>
+
+  <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
+    <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
+    <button type="button" class="btn btn-light shadow-sm mt-8" data-action="clipboard#copy" data-clipboard-target="button">
+      <i class="fa-regular fa-copy"></i>
+      Copier le lien d'invitation
+    </button>
   </div>
 
 </div>

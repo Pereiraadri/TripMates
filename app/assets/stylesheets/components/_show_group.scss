@@ -1,5 +1,5 @@
 .cont-group-show-big {
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .cover {
@@ -17,13 +17,15 @@
 
 
 .container-card-group-description {
-  width: 90%;
-  box-shadow: var(--box-shadow-image);
+  width: 810px;
+  margin: 0px 16px;
+  box-shadow: var(--box-shadow-hard);
   border-radius: 12px;
   margin-bottom: 32px;
 }
 
 .text-cont {
+width: 100%;
 display: flex;
 justify-content: center;
 }

@@ -6,6 +6,7 @@
 
 .card-groupe-container {
   .border-orange {
+    width: 100%;
     border: solid #ff8c00 !important;
     background-color: $light-beige !important;
     padding: 12px;
@@ -13,6 +14,7 @@
     box-shadow: var(--box-shadow-card);
     margin: 2px;
     align-self: flex-start;
+    margin-bottom: 16px;
   }
 }
 
@@ -52,4 +54,26 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.index-medium-text {
+  .index-card-medium-text {
+    color: $orange;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+}
+
+.title-index {
+    font-family: $body-font;
+    font-weight: bold;
+    font-size: 24px;
+    color: $orange;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+ul {
+  list-style-type: none;
 }

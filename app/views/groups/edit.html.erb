@@ -1,7 +1,7 @@
 <div class="container d-flex text-center justify-content-center">
   <%= form_with model: @group, method: :patch do |f| %>
     <div class="name-trip">
-      <%= f.label :title %>
+      <%= f.label :title, label: false, value: "Nom du groupe"%>
       <div class="name-trip-banner">
         <%= f.text_field :title, placeholder: "Nom du groupe", class: "rounded-input" %>
       </div>
@@ -18,7 +18,7 @@
         <div class="picture-choice text-center">
           <button type="button" class="btn btn-light shadow-sm"
            onclick="document.getElementById('group_cover_banner').click()">Choisis une photo</button>
-          <%= f.file_field :cover_banner, input_html: {class: 'form-text'} %>
+          <%= f.file_field :cover_banner, class: 'form-text custom-file-input' %>
           <%# <%= f.input :image, label:false, input_html: { class: 'form-text'}, as: :file %>
 
         </div>
