@@ -25,7 +25,11 @@ class Poll < ApplicationRecord
 
     choices.each_with_object({}) do |choice, results|
       vote_count = choice.votes.count
-      results[choice.answer] = (vote_count.to_f / total_votes * 100).round(2)
+
+      answer = self.budget? ? "#{choice.answer} €" : choice.answer
+
+      results[answer] = (vote_count.to_f / total_votes * 100).round(2)
     end
   end
+
 end
