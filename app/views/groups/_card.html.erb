@@ -1,8 +1,10 @@
-<div class="card-groupe-container mb-3 d-flex justify-content-center">
-  <div class="card bg-light border-orange" style="max-width: 810px;">
-    <div class="row g-0">
+<div class="card-groupe-container">
+  <div class="card border-orange" style="max-width: 810px;">
+    <div class="row">
       <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
       <div class="col-md-4 d-flex align-items-center justify-content-center">
+
+        <div class="cover-group-image">
         <% if group.cover_banner.attached? %>
           <%= cl_image_tag group.cover_banner.key %>
         <% end %>
