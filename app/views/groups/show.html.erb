@@ -22,6 +22,12 @@
         <% end %>
   </div>
 
+    <container class="text-cont">
+    <div class="container-card-group-description">
+      <p class="desc"><%= @group.description %></p>
+    </div>
+  </container>
+
 
   <div class="container mt-4">
   <h2 class="text-center text-primary">Résultats des sondages</h2>
@@ -47,11 +53,7 @@
   </div>
 </div>
 
-  <container class="text-cont">
-    <div class="container-card-group-description">
-      <p class="desc"><%= @group.description %></p>
-    </div>
-  </container>
+
 
 
   <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
