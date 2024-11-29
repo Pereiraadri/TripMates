@@ -1,34 +1,36 @@
-<div class="card-groupe-container mb-3 d-flex justify-content-center">
-  <div class="card bg-light border-orange" style="max-width: 810px;">
-    <div class="row g-0">
-      <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
-      <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <% if group.cover_banner.attached? %>
-          <%= cl_image_tag group.cover_banner.key %>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body-groupe text-end">
-          <p class="card-text text-orange">
-            <small class="text-muted">
-              <ul>
-                <% group.members.each do |member| %>
-                  <li>
-                    <% if member.avatar.attached? %>
-                      <%= image_tag member.avatar.variant(resize_to_limit: [50, 50]), alt: "#{member.email}'s avatar", class: "avatar" %>
-                    <% else %>
-                      <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar" %>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </small>
-          </p>
-          <div class="d-flex align-items-center justify-content-end">
-            <small class="text-orange">Membres du groupe</small>
+<%= link_to group_path(group) do %>
+  <div class="card-groupe-container mb-3 d-flex justify-content-center">
+    <div class="card bg-light border-orange" style="max-width: 810px;">
+      <div class="row g-0">
+        <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <% if group.cover_banner.attached? %>
+            <%= cl_image_tag group.cover_banner.key %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body-groupe text-end">
+            <p class="card-text text-orange">
+              <small class="text-muted">
+                <ul>
+                  <% group.members.each do |member| %>
+                    <li>
+                      <% if member.avatar.attached? %>
+                        <%= image_tag member.avatar.variant(resize_to_limit: [50, 50]), alt: "#{member.email}'s avatar", class: "avatar" %>
+                      <% else %>
+                        <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar" %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </small>
+            </p>
+            <div class="d-flex align-items-center justify-content-end">
+              <small class="text-orange">Membres du groupe</small>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
