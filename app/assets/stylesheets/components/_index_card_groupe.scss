@@ -1,3 +1,9 @@
+.cont-group-show {
+  max-width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
 .card-groupe-container {
   .border-orange {
     border: solid #ff8c00 !important;
@@ -28,7 +34,7 @@
   color: #ff8c00 !important;
 }
 
-.cover {
+.cover-group {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -37,6 +43,13 @@
 .cover-group-image {
   border-radius: 12px;
   box-shadow: var(--box-shadow-image);
-  max-width: 75%;
-  margin: 8px;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.image-cover-group {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
