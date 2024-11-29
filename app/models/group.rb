@@ -18,6 +18,15 @@ class Group < ApplicationRecord
     Poll.create(category: 0, group: self)
     Poll.create(category: 10, group: self)
     Poll.create(category: 20, group: self)
+    Poll.create(category: 30, group: self)
+  end
+
+  def prerequisite_polls_completed?
+    required_polls = %w[dates budget destination]
+    required_polls.all? do |category|
+      poll = polls.find_by(category: category)
+      poll.present? && poll.completed?
+    end
   end
 
   private

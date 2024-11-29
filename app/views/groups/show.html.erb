@@ -14,13 +14,38 @@
         <% @members.each do |member| %>
           <li>
               <% if member.avatar.attached? %>
-                <%= image_tag member.avatar.variant(resize_to_limit: [50, 50]), alt: "#{member.name}'s avatar", class: "avatar" %>
+                <%= image_tag member.avatar.variant(resize_to_limit: [50, 50]), alt: "#{member.email}'s avatar", class: "avatar" %>
               <% else %>
                 <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar" %>
               <% end %>
           </li>
         <% end %>
   </div>
+
+
+  <div class="container mt-4">
+  <h2 class="text-center text-primary">Résultats des sondages</h2>
+  <div class="row mt-4 g-3">
+    <% @polls.each do |poll| %>
+      <div class="col-6 col-md-3">
+        <div class="result-card p-3 border border-success rounded text-center">
+          <h5 class="text-success">
+            Résultat <%= Poll.categories.key(poll.category)&.capitalize || "Inconnu" %>
+          </h5>
+          <% if poll.results.any? %>
+            <% poll.results.each do |answer, percentage| %>
+              <p class="result-value mt-2 fw-bold text-primary">
+                <%= answer %> - <%= percentage %>%
+              </p>
+            <% end %>
+          <% else %>
+            <p class="result-value mt-2 text-danger">Pas encore de résultat</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
   <container class="text-cont">
     <div class="container-card-group-description">
@@ -62,7 +87,16 @@
           </div>
 
           <div class="house-poll-button">
-            <i class="fa-solid fa-bed"></i>
+            <% if @hebergement_poll.present?  %>
+              <%= link_to poll_path(@hebergement_poll), class: "icon-link" do %>
+                <i class="fa-solid fa-bed"></i>
+              <% end %>
+            <% else %>
+              <i class="fa-solid fa-bed"></i>
+            <% end %>
+
+
+
           </div>
       </div>
     </div>

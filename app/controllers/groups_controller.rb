@@ -38,9 +38,13 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @members = @group.users
     @owner = @group.owner
-    @budget_poll = @group.polls.find_by(category: 0)
-    @destination_poll = @group.polls.find_by(category: 20)
-    @dates_poll = @group.polls.find_by(category: 10)
+    @budget_poll = @group.polls.find_by(category: 'budget')
+    @destination_poll = @group.polls.find_by(category: 'destination')
+    @dates_poll = @group.polls.find_by(category: 'dates')
+    if @group.prerequisite_polls_completed?
+      @hebergement_poll = @group.polls.find_by(category: 'hebergement')
+    end
+    @polls = @group.polls.includes(:choices, votes: :user)
   end
 
   def destroy
