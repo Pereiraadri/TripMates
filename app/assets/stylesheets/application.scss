@@ -19,6 +19,17 @@ p {
   margin: 0px;
 }
 
+button{
+  border: 0;
+  background-color: transparent;
+}
+
+:focus{
+  outline: none;
+}
+input[type=file] {
+  display: none;
+}
 
 
 rounded-input {
