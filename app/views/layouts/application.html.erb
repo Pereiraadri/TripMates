@@ -20,15 +20,14 @@
 
   <body>
 
-  <div class="main-container container-fluid">
-        <%= render "layouts/header" %>
-        <%= render "shared/flashes" %>
+    <div class="main-container container-fluid">
+      <%= render "layouts/header" %>
+      <%= render "shared/flashes" %>
 
       <%= yield %>
-
-  </div>
       <div class="footer" style="max-width: 810px;">
         <%= render "layouts/footer" %>
       </div>
+    </div>
   </body>
 </html>
