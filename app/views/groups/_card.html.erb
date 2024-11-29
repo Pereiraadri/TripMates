@@ -1,4 +1,5 @@
-<div class="card-groupe-container">
+<%= link_to group_path(group) do %>
+ <div class="card-groupe-container">
   <div class="card border-orange" style="max-width: 810px;">
       <h5 class="card-title-groupe text-orange"><%= group.title %></h5>
       <div class="cover-group">
@@ -30,3 +31,4 @@
       </div>
     </div>
   </div>
+<% end %>
