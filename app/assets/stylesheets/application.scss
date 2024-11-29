@@ -34,5 +34,6 @@ input[type=file] {
 
 rounded-input {
   border-radius: 12px;
-  border-color: 5px $sunset;
+  border-color: 1px $sunset;
+  border: 1px solid $sunset !important;
 }

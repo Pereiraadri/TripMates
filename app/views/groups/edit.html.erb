@@ -1,7 +1,7 @@
 <div class="container d-flex text-center justify-content-center">
   <%= form_with model: @group, method: :patch do |f| %>
     <div class="name-trip">
-      <%= f.label :title %>
+      <%= f.label :title, label: false, value: "Nom du groupe"%>
       <div class="name-trip-banner">
         <%= f.text_field :title, placeholder: "Nom du groupe", class: "rounded-input" %>
       </div>
