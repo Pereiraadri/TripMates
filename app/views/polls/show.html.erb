@@ -5,31 +5,17 @@
 
 
   <% if user_signed_in? && @poll.group.owner == current_user %>
-      <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+    <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+    <% if @poll.choices.any? %>
       <% @poll.choices.each do |choice|%>
         <%= render "choices/cards/#{@poll.category}", choice: choice %>
       <% end %>
+      <%= render "poll" %>
+    <% end %>
   <% else %>
     <% @poll.choices.each do |choice|%>
       <%= render "choices/cards/#{@poll.category}", choice: choice %>
     <% end %>
-    <div class="button d-flex justify-content-center">
-      <button type="submit" class="button-pill sunset">
-        Valider mon vote.
-        <i class="right-arrow fa-regular fa-circle-right"></i>
-      </button>
-    </div>
+    <%= render "poll" %>
   <% end %>
-
 </div>
-
-
-<%= simple_form_for Vote.new, url: choice_votes_path(:choice_id), method: :post do |f| %>
-  <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
-    <div>
-      <%= b.radio_button %>
-      <%= b.label %>
-    </div>
-  <% end %>
-  <%= f.submit "Vote" %>
-<% end %>
