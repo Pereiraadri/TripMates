@@ -1,15 +1,23 @@
-<div class="back">
-  <%= link_to :back, class: "icon-link" do %>
-    <i class="fa-solid fa-left-long"></i>
-  <% end %>
-</div>
+<% if @poll && current_page?(poll_path) %>
+  <div class="back">
+    <%= link_to group_path(@poll&.group), class: "icon-link" do %>
+      <i class="fa-solid fa-left-long"></i>
+    <% end %>
+  </div>
+<% else %>
+  <div class="back">
+    <%= link_to :back, class: "icon-link" do %>
+      <i class="fa-solid fa-left-long"></i>
+    <% end %>
+  </div>
+<% end %>
 
 <% if current_page?(root_path)%>
-<div class="back">
- <%= button_to groups_path, method: :post, class: "icon-link" do %>
-    <i class="fa-solid fa-circle-plus"></i>
-  <% end %>
-</div>
+  <div class="back">
+  <%= button_to groups_path, method: :post, class: "icon-link" do %>
+      <i class="fa-solid fa-circle-plus"></i>
+    <% end %>
+  </div>
 <%end%>
 
 <div class="home">
