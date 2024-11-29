@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(title: "Nouveau groupe")
+    @group = Group.new()
     @group.owner = current_user
     @group.users << current_user
     if @group.save
@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
   def new
-    @group = Group.new
+    @group = Group.new()
   end
 
   def show
