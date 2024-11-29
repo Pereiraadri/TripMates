@@ -7,9 +7,9 @@ class VotesController < ApplicationController
     @vote = current_user.votes.build(choice: @choice)
 
     if @vote.save
-      redirect_to poll_path(@choice.poll), notice: "Vote submitted!"
+      redirect_to group_path(@choice.poll.group), notice: "Vote submitted!"
     else
-      redirect_to poll_path(@choice.poll), alert: "You have already voted!"
+      redirect_to group_path(@choice.poll.group), alert: "You have already voted!"
     end
   end
 
