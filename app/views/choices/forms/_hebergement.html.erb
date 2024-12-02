@@ -1,10 +1,22 @@
-<%= simple_form_for [@poll, choice], method: :post do |f| %>
+<form action="<%= poll_choices_path(@poll) %>" method="post">
+  <!-- Token CSRF pour la sécurité -->
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <!-- Champ pour le lien de l'hébergement -->
   <div class="mb-3">
-    <%= f.input :url, label: "Lien de l'hébergement", input_html: { placeholder: "URL de l'hébergement (Booking, Airbnb...)", class: "form-control" } %>
+    <label for="url" class="form-label">Lien de l'hébergement</label>
+    <input
+      type="url"
+      name="choice[url]"
+      id="url"
+      placeholder="URL de l'hébergement (Booking, Airbnb...)"
+      class="form-control"
+      required
+    >
   </div>
+
+  <!-- Bouton de soumission -->
   <div class="text-center">
     <button type="submit" class="btn btn-success">Ajouter l'hébergement</button>
   </div>
-<% end %>
-
-
+</form>
