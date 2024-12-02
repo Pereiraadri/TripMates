@@ -1,6 +1,6 @@
 .main-container {
   width: 100vw;
-  max-width: 810px;
+  // max-width: 810px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,3 +8,8 @@
   overflow: scroll;
   margin-bottom: 7vh;
 }
+// .container-card {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
