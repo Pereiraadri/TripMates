@@ -36,3 +36,10 @@ rounded-input {
   border-color: 1px $sunset;
   border: 1px solid $sunset !important;
 }
+
+li {
+  margin: 0px;
+}
+ul {
+  margin-block-start: 0px !important;
+}
