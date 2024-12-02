@@ -4,6 +4,7 @@
 
 
   <% if user_signed_in? && @poll.group.owner == current_user %>
+
     <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
     <% if @poll.choices.any? %>
       <div class="sortable-container">
