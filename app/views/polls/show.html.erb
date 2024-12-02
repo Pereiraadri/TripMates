@@ -7,9 +7,11 @@
   <% if user_signed_in? && @poll.group.owner == current_user %>
     <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
     <% if @poll.choices.any? %>
-      <% @poll.choices.each do |choice|%>
-        <%= render "choices/cards/#{@poll.category}", choice: choice %>
-      <% end %>
+      <ul data-controller="sortable">
+        <% @poll.choices.each do |choice|%>
+          <li><%= render "choices/cards/#{@poll.category}", choice: choice %></li>
+        <% end %>
+      </ul>
       <%= render "poll" %>
     <% end %>
   <% else %>
@@ -19,3 +21,9 @@
     <%= render "poll" %>
   <% end %>
 </div>
+<%#
+
+    <li>toto</li>
+    <li>tata</li>
+    <li>tutu</li>
+  </ul> %>
