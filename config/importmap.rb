@@ -1,3 +1,4 @@
+pin "flatpickr", to: "https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"
 # Pin npm packages by running ./bin/importmap
 
 pin "application"
@@ -9,4 +10,4 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "flatpickr" # @4.6.13
 pin "@stimulus-components/clipboard", to: "@stimulus-components--clipboard.js" # @5.0.0
-pin "sortablejs" # @1.15.6
+

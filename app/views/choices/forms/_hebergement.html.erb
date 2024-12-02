@@ -1,11 +1,10 @@
-<%= simple_form_for [poll, choice] do |f| %>
-  <%= f.input :answer, label: "Rentre ton URL." %>
-
-  <div class="button d-flex justify-content-center">
-      <button type="submit" class="button-pill sunset">
-        Ajouter un nouveau choix
-        <i class="right-arrow fa-regular fa-circle-right"></i>
-      </button>
-    </div>
-
+<%= simple_form_for [@poll, choice], method: :post do |f| %>
+  <div class="mb-3">
+    <%= f.input :url, label: "Lien de l'hébergement", input_html: { placeholder: "URL de l'hébergement (Booking, Airbnb...)", class: "form-control" } %>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success">Ajouter l'hébergement</button>
+  </div>
 <% end %>
+
+
