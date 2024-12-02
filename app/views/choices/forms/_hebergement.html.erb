@@ -1,10 +1,9 @@
-<%= simple_form_for [@poll, choice], method: :post do |f| %>
-  <div class="mb-3">
-    <%= f.input :url, label: "Lien de l'hébergement", input_html: { placeholder: "URL de l'hébergement (Booking, Airbnb...)", class: "form-control" } %>
-  </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-success">Ajouter l'hébergement</button>
-  </div>
+<% if user_signed_in? && @poll.group.owner == current_user %>
+  <%= form_with url: create_accommodation_choice_poll_path(@poll), method: :post, local: true do |f| %>
+    <div class="mb-3">
+      <%= f.label :url, "Ajouter une URL d'hébergement" %>
+      <%= f.text_field :url, placeholder: "https://www.tonurl.com/...", class: "form-control" %>
+    </div>
+    <%= f.submit "Ajouter l'hébergement", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
-
-
