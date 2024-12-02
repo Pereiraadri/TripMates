@@ -44,6 +44,9 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "image_processing", "~> 1.2"
 gem 'metainspector'
+gem "httparty"
+gem "nokogiri"
+gem "bcrypt", "~> 3.1.7"
 
 group :development, :test do
   gem "dotenv-rails"

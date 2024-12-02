@@ -2,14 +2,14 @@ class VotesController < ApplicationController
   def create
     @choice = Choice.find_by(id: vote_params[:choice_id])
 
-    redirect_to root_path, alert: "Choice not found!" and return if @choice.nil?
+    redirect_to root_path, alert: "Choix introuvable!" and return if @choice.nil?
 
     @vote = current_user.votes.build(choice: @choice)
 
     if @vote.save
-      redirect_to group_path(@choice.poll.group), notice: "Vote submitted!"
+      redirect_to group_path(@choice.poll.group), notice: "a Voté!"
     else
-      redirect_to group_path(@choice.poll.group), alert: "You have already voted!"
+      redirect_to group_path(@choice.poll.group), alert: "Tu as déja voté!"
     end
   end
 

@@ -1,9 +1,25 @@
-<%# liste des choices (choix des users) + lien vers la new de choice %>
-<%# ensuite => overlay %>
 <div class="container-card">
   <h1 class="title"><%= @poll.title %></h1>
+<% if user_signed_in? && @poll.group.owner == current_user %>
+  <%= form_with url: create_accommodation_choice_poll_path(@poll), method: :post, local: true do |f| %>
+    <div class="mb-3">
+      <%= f.label :url, "Ajouter une URL d'hébergement" %>
+      <%= f.text_field :url, placeholder: "https://www.tonurl.com/...", class: "form-control" %>
+    </div>
+    <%= f.submit "Ajouter l'hébergement", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
 
-
+<% @poll.choices.each do |choice| %>
+  <div class="choice-card">
+    <h3><%= choice.answer %></h3>
+    <% if choice.metadata["image"] %>
+      <img src="<%= choice.metadata["image"] %>" alt="Hébergement" class="img-thumbnail">
+    <% end %>
+    <p><%= choice.metadata["description"].truncate(500) %></p>
+    <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
+  </div>
+<% end %>
   <% if user_signed_in? && @poll.group.owner == current_user %>
     <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
     <% if @poll.choices.any? %>
@@ -21,9 +37,3 @@
     <%= render "poll" %>
   <% end %>
 </div>
-<%#
-
-    <li>toto</li>
-    <li>tata</li>
-    <li>tutu</li>
-  </ul> %>
