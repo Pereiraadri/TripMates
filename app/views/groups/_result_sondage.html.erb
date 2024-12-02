@@ -1,0 +1,26 @@
+<div class="container-poll-result">
+  <h5 class="title-sondage">
+    Résultat <%= poll.category %>
+  </h5>
+  <div class="container-results">
+    <% if poll.results.any? %>
+      <% poll.results.sort.each do |result| %>
+        <div class="result">
+          <div class="avatars">
+            <% 3.times do |i| %>
+              <div class="avatar" style="transform: translateX(<%= i*50 %>%)"></div>
+            <% end %>
+
+          </div>
+          <div class="progress-bar">
+            <div class="percentage" style="width: <%= result[1] == 0 ? 5 : result[1] %>%">
+            </div>
+          </div>
+          <div class="answer">
+            <%= result[0] %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

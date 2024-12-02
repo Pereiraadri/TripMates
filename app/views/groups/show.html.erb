@@ -20,6 +20,25 @@
               <% end %>
           </li>
         <% end %>
+      </ul>
+      <% if @owner == current_user %>
+        <div data-controller="menu" class="menu-icon">
+          <i class="fa-solid fa-ellipsis-vertical" data-action="click->menu#toggle"></i>
+          <div class="dropdown-menu" data-menu-target="dropdown">
+            <a href="#">
+              <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
+                <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
+                <button type="button" class="btn btn-light shadow-sm mt-8" data-action="clipboard#copy" data-clipboard-target="button">
+                <i class="fa-regular fa-copy"></i>
+                  Copier le lien d'invitation
+                </button>
+              </div>
+            </a>
+            <%= link_to "Supprimer le groupe.", group_path(@group), data: {turbo_method: :delete } %>
+            <%= link_to "Modifier le groupe.", edit_group_path(@group) %>
+          </div>
+        </div>
+      <% end %>
   </div>
 
     <container class="text-cont">
@@ -27,34 +46,6 @@
       <p class="desc"><%= @group.description %></p>
     </div>
   </container>
-
-
-  <div class="container mt-4">
-  <h2 class="title">Résultats des sondages</h2>
-  <div class="row mt-4 g-3">
-    <% @polls.each do |poll| %>
-      <div class="col-6 col-md-3">
-        <div class="result-card p-3 border border-success rounded text-center">
-          <h5 class="text-success">
-            Résultat <%= Poll.categories.key(poll.category)&.capitalize || "Inconnu" %>
-          </h5>
-          <% if poll.results.any? %>
-            <% poll.results.each do |answer, percentage| %>
-              <p class="result-value mt-2 fw-bold text-primary">
-                <%= answer %> - <%= percentage %>%
-              </p>
-            <% end %>
-          <% else %>
-            <p class="result-value mt-2 text-danger">Pas encore de résultat</p>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-
 
 
   <div class="go-to-polls">
@@ -90,12 +81,13 @@
               <i class="fa-solid fa-bed"></i>
             <% end %>
 
-
-
           </div>
       </div>
     </div>
   </div>
+  <% @polls.each do |poll| %>
+  <%= render "result_sondage", poll: poll %>
+  <% end %>
 
   <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
     <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
@@ -104,5 +96,4 @@
       Copier le lien d'invitation
     </button>
   </div>
-
 </div>

@@ -1,8 +1,5 @@
 <div class="container-card">
   <h1 class="title"><%= @poll.title %></h1>
-
-
-
 <% if user_signed_in? && @poll.group.owner == current_user %>
   <%= form_with url: create_accommodation_choice_poll_path(@poll), method: :post, local: true do |f| %>
     <div class="mb-3">
@@ -23,3 +20,20 @@
     <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
   </div>
 <% end %>
+  <% if user_signed_in? && @poll.group.owner == current_user %>
+    <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
+    <% if @poll.choices.any? %>
+      <ul data-controller="sortable">
+        <% @poll.choices.each do |choice|%>
+          <li><%= render "choices/cards/#{@poll.category}", choice: choice %></li>
+        <% end %>
+      </ul>
+      <%= render "poll" %>
+    <% end %>
+  <% else %>
+    <% @poll.choices.each do |choice|%>
+      <%= render "choices/cards/#{@poll.category}", choice: choice %>
+    <% end %>
+    <%= render "poll" %>
+  <% end %>
+</div>
