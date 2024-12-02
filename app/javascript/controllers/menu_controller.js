@@ -15,6 +15,7 @@ export default class extends Controller {
   // Ferme le menu lorsque l'utilisateur clique en dehors de celui-ci
   connect() {
     document.addEventListener("click", this.closeMenu.bind(this));
+
   }
 
   disconnect() {
