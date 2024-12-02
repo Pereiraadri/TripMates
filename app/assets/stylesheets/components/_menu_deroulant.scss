@@ -1,0 +1,38 @@
+/* Style de l'icône */
+.menu-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Style du menu déroulant */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+/* Style des éléments du menu */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Dernier élément sans bordure */
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Effet au survol */
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
