@@ -10,4 +10,4 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "flatpickr" # @4.6.13
 pin "@stimulus-components/clipboard", to: "@stimulus-components--clipboard.js" # @5.0.0
-
+pin "sortablejs" # @1.15.6
