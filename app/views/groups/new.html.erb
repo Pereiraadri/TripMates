@@ -1,5 +1,5 @@
 <div class="container d-flex text-center justify-content-center">
-  <%= form_with model: @group, method: :patch do |f| %>
+  <%= form_with model: @group, method: :post do |f| %>
     <div class="name-trip">
       <%= f.label :title, label: false, value: "Nom du groupe"%>
       <div class="name-trip-banner">
@@ -28,7 +28,7 @@
    <%# bouton creer  %>
     <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill medium-green">
-        Modifier
+        Créer
           <i class="right-arrow fa-regular fa-circle-right"></i>
       </button>
     </div>
