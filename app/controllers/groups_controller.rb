@@ -7,11 +7,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new
+    @group = Group.new(group_params)
     @group.owner = current_user
     @group.users << current_user
     if @group.save
-      redirect_to edit_group_path(@group), notice: "Le groupe a été créé."
+      redirect_to group_path(@group), notice: "Le groupe a été créé."
     else
       flash[:alert] = "Le groupe n'a pas été créé."
       redirect_to root_path
