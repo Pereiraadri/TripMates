@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show] do
+    member do
+      post :create_accommodation_choice
+    end
     resources :choices, only: [:new, :create]
   end
   resources :choices, only: [:update, :destroy] do
