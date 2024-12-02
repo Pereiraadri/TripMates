@@ -1,4 +1,4 @@
-<% if @poll && current_page?(poll_path) %>
+<% if @poll %>
   <div class="back">
     <%= link_to group_path(@poll&.group), class: "icon-link" do %>
       <i class="fa-solid fa-left-long"></i>
