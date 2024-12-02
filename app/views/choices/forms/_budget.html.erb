@@ -4,7 +4,7 @@
     <div class="slider-container" style="position: relative;">
       <!-- Tooltip qui affichera la valeur du budget -->
       <div id="tooltip" class="tooltip">0€</div>
-      <%= f.input :answer, label: "Choisi ton budget.",
+      <%= f.input :answer, label: "Choisis ton budget.",
                         as: :range,
                         input_html: {
                           min: 0,
@@ -18,10 +18,10 @@
     </div>
   </div>
 
-   <div class="button d-flex justify-content-center">
+  <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill sunset">
         Ajouter un nouveau choix
         <i class="right-arrow fa-regular fa-circle-right"></i>
       </button>
-    </div>
+  </div>
 <% end %>

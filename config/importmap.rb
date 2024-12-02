@@ -1,3 +1,4 @@
+pin "flatpickr", to: "https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"
 # Pin npm packages by running ./bin/importmap
 
 pin "application"

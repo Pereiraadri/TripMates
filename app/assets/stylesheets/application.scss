@@ -6,7 +6,6 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -36,4 +35,11 @@ rounded-input {
   border-radius: 12px;
   border-color: 1px $sunset;
   border: 1px solid $sunset !important;
+}
+
+li {
+  margin: 0px;
+}
+ul {
+  margin-block-start: 0px !important;
 }
