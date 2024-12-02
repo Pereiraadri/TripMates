@@ -3,11 +3,11 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups
-    #@groups = current_user.groups
+    # @groups = current_user.groups
   end
 
   def create
-    @group = Group.new()
+    @group = Group.new
     @group.owner = current_user
     @group.users << current_user
     if @group.save
@@ -30,8 +30,9 @@ class GroupsController < ApplicationController
   def edit
     @group = Group.find(params[:id])
   end
+
   def new
-    @group = Group.new()
+    @group = Group.new
   end
 
   def show
@@ -41,13 +42,14 @@ class GroupsController < ApplicationController
     @budget_poll = @group.polls.find_by(category: 'budget')
     @destination_poll = @group.polls.find_by(category: 'destination')
     @dates_poll = @group.polls.find_by(category: 'dates')
-    if @group.prerequisite_polls_completed?
-      @hebergement_poll = @group.polls.find_by(category: 'hebergement')
-    end
+    @hebergement_poll = @group.polls.find_by(category: 'hebergement') if @group.prerequisite_polls_completed?
     @polls = @group.polls.includes(:choices, votes: :user)
   end
 
   def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to root_path
   end
 
   def send_invite
@@ -66,7 +68,6 @@ class GroupsController < ApplicationController
     end
   end
 
-
   private
 
   def set_group
@@ -74,6 +75,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-  params.require(:group).permit(:title, :description, :cover_banner)
+    params.require(:group).permit(:title, :description, :cover_banner)
   end
 end
