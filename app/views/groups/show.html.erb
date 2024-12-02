@@ -20,6 +20,25 @@
               <% end %>
           </li>
         <% end %>
+      </ul>
+      <% if @owner == current_user %>
+        <div data-controller="menu" class="menu-icon">
+          <i class="fa-solid fa-ellipsis-vertical" data-action="click->menu#toggle"></i>
+          <div class="dropdown-menu" data-menu-target="dropdown">
+            <a href="#">
+              <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
+                <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
+                <button type="button" class="btn btn-light shadow-sm mt-8" data-action="clipboard#copy" data-clipboard-target="button">
+                <i class="fa-regular fa-copy"></i>
+                  Copier le lien d'invitation
+                </button>
+              </div>
+            </a>
+            <%= link_to "Supprimer le groupe.", group_path(@group), data: {turbo_method: :delete } %>
+            <%= link_to "Modifier le groupe.", edit_group_path(@group) %>
+          </div>
+        </div>
+      <% end %>
   </div>
 
     <container class="text-cont">
@@ -77,5 +96,4 @@
       Copier le lien d'invitation
     </button>
   </div>
-
 </div>

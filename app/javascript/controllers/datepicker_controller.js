@@ -12,7 +12,7 @@ export default class extends Controller {
         mode: "range",
         minDate: "today",
         inline: true,
-        dateFormat: "Y-m-d",
+        dateFormat: "d.m.Y",
       })
     }
   }
