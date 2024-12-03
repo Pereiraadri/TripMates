@@ -1,6 +1,6 @@
 <%= simple_form_for Vote.new, url: choice_votes_path(:choice_id), method: :post do |f| %>
   <%= yield(f) %>
-  <div class="button d-flex justify-content-center">
+    <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill sunset">
         Valider mon vote
         <i class="right-arrow fa-regular fa-circle-right"></i>
