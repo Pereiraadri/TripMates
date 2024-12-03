@@ -13,7 +13,7 @@ User.create!(email: "adrien@gmail.com", password: "123456")
 User.create!(email: "julia@gmail.com", password: "123456")
 
   p "Creating group"
-  group = Group.new(title: "Chili", description: "Préparez-vous à vivre une aventure mémorable au Chili pour célébrer les 50 ans de Jean-Mich ! Entre glaciers majestueux, vignes chiliennes et soirées endiablées, ce voyage restera gravé dans nos mémoires. ✈️🥂✨🧁", owner: User.all.sample)
+  group = Group.new(title: "Chili", description: "Préparez-vous à vivre une aventure mémorable au Chili pour célébrer les 50 ans de Jean-Mich ! Entre glaciers majestueux, vignes chiliennes et soirées endiablées, ce voyage restera gravé dans nos mémoires. 🥂✨🧁", owner: User.all.sample)
   file = URI.parse("https://www.terres-chiliennes.com/uploads/sites/14/2020/06/glacier-perito-moreno-argentine-730x520.jpeg").open
   group.cover_banner.attach(io: file, filename: "chili.jpeg", content_type: "image/jpg")
   group.save!
