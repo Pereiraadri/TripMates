@@ -18,8 +18,10 @@
               <% end %>
             </ul>
             <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
+            <span style= "display: none">
               <%= b.radio_button %>
               <%= b.label %>
+            </span>
             <% end %>
           </div>
           <% else %>
