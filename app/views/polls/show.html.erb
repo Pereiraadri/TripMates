@@ -1,13 +1,8 @@
 <div class="container-card">
   <h1 class="title"><%= @poll.title %></h1>
-
-
-
   <% if user_signed_in? && @poll.group.owner == current_user %>
-
     <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
     <%= render "result" %>
-
   <% else %>
     <%= render "result" %>
   <% end %>
