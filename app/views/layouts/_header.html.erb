@@ -1,3 +1,9 @@
 <div class="tripmates-banner">
   <h2><strong>TripMates</strong></h2>
+  <div data-controller="menu" class="menu-icon">
+    <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-menu", data: { action: "click->menu#toggle" } %>
+    <div class="dropdown-menu" data-menu-target="dropdown">
+      <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-link", data: { confirm: "Es-tu sûr(e) de vouloir te déconnecter ?" } %>
+    </div>
+  </div>
 </div>

@@ -2,34 +2,8 @@
   <h1 class="title"><%= @poll.title %></h1>
   <% if user_signed_in? && @poll.group.owner == current_user %>
     <%= render "choices/forms/#{@poll.category}", choice: Choice.new, poll: @poll %>
-    <% if @poll.choices.any? %>
-      <%= render "poll" do |f| %>
-        <div class="sortable-container" data-controller="form">
-          <% if @poll.category == "hebergement" %>
-            <div data-controller="sortable">
-              <ul data-sortable-target="list">
-                <% @poll.choices.each do |choice| %>
-                  <li data-choice-id="<%= choice.id %>"><%= render "choices/cards/#{@poll.category}", choice: choice %></li>
-                <% end %>
-              </ul>
-              <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
-                <%= b.radio_button %>
-                <%= b.label %>
-              <% end %>
-            </div>
-          <% else %>
-            <ul>
-              <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
-                <li data-action="click->form#click" data-choice-id="<%= b.object.id %>"><%= render "choices/cards/#{@poll.category}", choice: b.object, button: b %></li>
-              <% end %>
-            </ul>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render "result" %>
   <% else %>
-    <% @poll.choices.each do |choice|%>
-      <%= render "choices/cards/#{@poll.category}", choice: choice %>
-    <% end %>
+    <%= render "result" %>
   <% end %>
 </div>
