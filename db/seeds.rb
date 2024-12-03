@@ -1,6 +1,7 @@
 require "open-uri"
 
 p "Cleaning the DB"
+UserGroup.destroy_all
 User.destroy_all
 Group.destroy_all
 Poll.destroy_all
