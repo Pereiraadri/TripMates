@@ -1,7 +1,7 @@
 .container-poll-result {
   display: flex;
   flex-direction: column;
-  width: 344px;
+  width: 374px;
   border: solid 2px $orange;
   border-radius: 12px;
   padding: 8px;
@@ -12,17 +12,21 @@
 .container-results {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .avatars {
+  width: 40px;
+  height: 20px;
   display: flex;
-  justify-items: flex-start;
+  align-items: center;
+  margin-right: 8px;
 }
 
 .result {
   display: flex;
   align-items: center;
+  height: 20px;
 }
 
 .result:first-child .percentage {
@@ -30,8 +34,9 @@
 }
 
 .progress-bar {
-  width: 250px;
+  width: 200px;
   height: 100%;
+  padding-right: 8px;
 }
 
 .percentage {
@@ -44,12 +49,24 @@
   display: flex;
   justify-content: flex-end;
   width: 125px;
+  font-family: $body-font;
+  font-weight: bolder;
+  color: $sunset;
+  font-size: 14px;
 }
 
 .title-sondage {
   font-family: $body-font;
   font-weight: bold;
   color: $orange;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 32px;
+}
+
+img.avatar-group {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
 }

@@ -1,3 +1,14 @@
+
+<% if user_signed_in? && @poll.group.owner == current_user %>
+  <%= form_with url: create_accommodation_choice_poll_path(@poll), method: :post, local: true do |f| %>
+    <div class="mb-3">
+      <%= f.label :url, "Ajouter une URL d'hébergement" %>
+      <%= f.text_field :url, placeholder: "https://www.tonurl.com/...", class: "form-control" %>
+    </div>
+    <%= f.submit "Ajouter l'hébergement", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
 <form action="<%= poll_choices_path(@poll) %>" method="post">
   <!-- Token CSRF pour la sécurité -->
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -20,3 +31,4 @@
     <button type="submit" class="btn btn-success">Ajouter l'hébergement</button>
   </div>
 </form>
+

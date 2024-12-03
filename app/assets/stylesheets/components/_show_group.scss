@@ -10,8 +10,8 @@
 
 .cover-group-image {
   border-radius: 12px;
-  box-shadow: var(--box-shadow-image);
-  max-width: 75%;
+  box-shadow: var(--box-shadow-hard);
+  width: 344px;
   margin: 8px;
 }
 
@@ -105,4 +105,48 @@ height: fit-content;
   height: 4rem;
   text-align: center;
   align-content: center;
+}
+
+.members {
+  display: flex;
+  width: 344px;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.avatar-group {
+    width: 25px;
+    height: 25px;
+    border-radius: 999px;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+  display: flex;
+  justify-items: flex-end ;
+  align-items: center;
+  justify-content: center;
+  padding-right: 16px;
+}
+
+.container-avatar {
+  display: flex;
+  width: 344px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fa-ellipsis-vertical {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
