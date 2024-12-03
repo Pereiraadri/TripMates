@@ -19,16 +19,9 @@
 
 
   <body>
-
-  <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-link", data: { confirm: "Es-tu sûr(e) de vouloir te déconnecter ?" } %>
-
-
-
-
-  <%= render "layouts/header" %>
+    <%= render "layouts/header" %>
     <div class="main-container container-fluid">
       <%= render "shared/flashes" %>
-
       <%= yield %>
       <div class="footer" style="max-width: 810px;">
         <%= render "layouts/footer" %>
