@@ -1,11 +1,23 @@
-<%= simple_form_for [poll, choice] do |f| %>
-  <%= f.input :answer, label: "Rentre ta destination." %>
+<div class="cont-group-show-big">
+  <h1 class="title">Sondage destination</h1>
 
-  <div class="button d-flex justify-content-center">
-    <button type="submit" class="button-pill sunset">
-      Ajouter un nouveau choix
-      <i class="right-arrow fa-regular fa-circle-right"></i>
-    </button>
+  <div class="destination-poll-button-sondage">
+    <i class="fa-solid fa-umbrella-beach"></i>
   </div>
 
-<% end %>
+  <div class="input-container">
+    <%= simple_form_for [poll, choice] do |f| %>
+      <%= f.input :answer,
+          label_html: { class: "label-destination"},
+          label: "Rentre ta destination.",
+          input_html: { class: 'input-destination' } %>
+
+    <div class="button d-flex justify-content-center">
+      <button type="submit" class="button-pill sunset">
+        Ajouter un nouveau choix
+        <i class="right-arrow fa-regular fa-circle-right"></i>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>

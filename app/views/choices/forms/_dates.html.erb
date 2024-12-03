@@ -1,7 +1,15 @@
+<div class="cont-group-show-big">
+  <h1 class="title">Sondage dates</h1>
 
-  <%= simple_form_for [poll, choice], data: { controller: 'datepicker'} do|f| %>
+  <div class="destination-poll-button-sondage">
+    <i class="fa-solid fa-calendar"></i>
+  </div>
+
+  <div class="input-container">
+    <%= simple_form_for [poll, choice], data: { controller: 'datepicker'} do|f| %>
     <%= f.input :answer,
                 as: :string,
+                label: false,
                 input_html: { id: 'range_start', data: { controller: "datepicker" } } %>
 
     <div class="button d-flex justify-content-center">
@@ -11,3 +19,5 @@
       </button>
     </div>
   <% end %>
+  </div>
+</div>

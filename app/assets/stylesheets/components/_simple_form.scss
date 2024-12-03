@@ -1,0 +1,156 @@
+.input-container {
+  width: 374px;
+}
+
+.input-destination {
+  width: 100%;
+  border-radius: 12px;
+  background-color: white;
+  border: solid 1px $sunset;
+}
+
+.label-destination {
+  font-family: $body-font;
+  font-weight: bold;
+  color: $sunset;
+  padding-left: 8px;
+}
+
+.destination-poll-button-sondage {
+  border: solid 2px $sunset;
+  border-radius: 12px;
+  font-size: 2rem;
+  color: $sunset;
+  width: 6rem;
+  height: 6rem;
+  text-align: center;
+  align-content: center;
+  font-size: 40px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+
+  .fa-umbrella-beach {
+    font-size: 50px;
+  }
+}
+
+.slider-container {
+  color: $sunset;
+  font-family: $body-font;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 355px;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: $dark-blue;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+ -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color: $light-green;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid $dark-blue;
+  outline: 3px solid $dark-blue;
+  outline-offset: 0.125rem;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: $dark-blue;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: $light-green;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid $dark-blue;
+  outline: 3px solid $dark-blue;
+  outline-offset: 0.125rem;
+}
+
+#range_start {
+  background-color: white;
+  color: $sunset;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-card);
+}
+
+.flatpickr-calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.flatpickr-months .flatpickr-month {
+  color: $sunset !important;
+  font-family: $body-font !important;
+  font-weight: bold !important;
+}
+
+.flatpickr-weekday {
+  color: $dark-blue !important;
+}
+
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+  cursor: not-allowed;
+  color: rgba(38, 70, 83, 0.1);
+}
+
+.flatpickr-day {
+  color: $dark-blue;
+}
+
+.flatpickr-day.today {
+  border-color: $light-green;
+}
+
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.notAllowed.nextMonthDay {
+  color: rgba(38, 70, 83, 0.3);
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+.flatpickr-calendar.inline {
+  transform: translateX(-50%);
+  top: 4px;
+  left: 50%;
+}

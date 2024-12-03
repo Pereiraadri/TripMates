@@ -1,22 +1,13 @@
 <%#  Affichage de la valeur du choix de destination %>
 <div class="card-box mb-4" style="max-width: 374px;">
-      <div class="card-card col justify-content-evenly">
-        <div class="image-card col-md-4">
-          <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
-          <i class="user-pic fa-solid fa-user"></i>
-        </div>
+      <div class="card-destination-answer">
+
     <div class="col-md-7">
       <div class="card-body">
-        <h5 class="card-title">Proposition de <%= %></h5>
 
-        <div class="text-dates">
+        <div class="text-destination">
           <div class="medium-text">
-            <p class="card-medium-text"><small>Date début</small></p>
-            <p class="card-medium-text"><small>Date fin</small></p>
-          </div>
-          <div class="small-text">
-            <p class="card-small-text"><small>20/06/24</small></p>
-            <p class="card-small-text"><small>30/07/24</small></p>
+            <p class="card-medium-text-destination"><small> <%= choice.answer.capitalize%></small></p>
           </div>
         </div>
       </div>
