@@ -4,7 +4,7 @@
 
   <div class="cover">
     <% if @group.cover_banner.attached? %>
-      <%= cl_image_tag @group.cover_banner.key, class: "image-cover-group" %>
+      <%= cl_image_tag @group.cover_banner.key, class: "cover-group-image" %>
     <% end %>
   </div>
 
@@ -14,15 +14,15 @@
     </div>
 
     <div class="container-avatar">
-      <div class="avatars">
+      <div class="avatars-show-group">
         <% @members.each_with_index do |member, i| %>
-          <% if member.avatar.attached? %>
-            <div class="avatar" style="transform: translateX(-<%= i * 50 %>%); z-index: <%= -i %>">
+          <div class="avatar-large" style="transform: translateX(-<%= i * 50 %>%); z-index: <%= -i %>">
+            <% if member.avatar.attached? %>
               <%= image_tag member.avatar.variant(resize_to_limit: [10, 10]), alt: "#{member.email}'s avatar", class: "avatar-group" %>
-            </div>
-          <% else %>
-            <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
-          <% end %>
+            <% else %>
+              <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <div class="menu">
@@ -91,6 +91,12 @@
     </div>
   </div>
   <% @polls.each do |poll| %>
-    <%= render "result_sondage", poll: poll %>
+    <% if poll.category != 'hebergement' %>
+      <%= render "result_sondage", poll: poll %>
+    <% else %>
+      <%= render 'result_hebergment', poll: poll %>
+    <% end %>
   <% end %>
 </div>
+
+<%# <%= console %>

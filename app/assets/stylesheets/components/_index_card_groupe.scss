@@ -16,6 +16,7 @@
     align-self: flex-start;
     margin-bottom: 16px;
     border: 2px;
+    margin-top: 50px;
   }
 }
 
@@ -29,12 +30,21 @@
     color: $peach !important;
       }
 }
+
+.text-muted ul {
+  display: inline-flex;
+}
+
 .card-title-groupe {
   color: $peach !important;
   font-weight: bold;
 }
 .text-orange {
   color: #ff8c00 !important;
+}
+
+.cover {
+  width: 374px;
 }
 
 .cover-group {
@@ -46,7 +56,7 @@
 .cover-group-image {
   border-radius: 12px;
   box-shadow: var(--box-shadow-image);
-  width: 100%;
+  width: 374px;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
@@ -56,8 +66,9 @@
   object-position: center;
   border-radius: 12px;
   box-shadow: var(--box-shadow-hard);
-  width: 374px;
-  margin: 8px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .index-medium-text {
