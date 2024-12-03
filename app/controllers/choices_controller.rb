@@ -63,7 +63,7 @@ class ChoicesController < ApplicationController
     html = URI.open(url)
     doc = Nokogiri::HTML.parse(html)
 
-    title = doc.search('.tpy-headline-3')&.text.strip rescue "Titre non disponible"
+    title = doc.search('.tpy-headline-3')&.first&.text.strip rescue "Titre non disponible"
     image = doc.search('img.object-cover').first['src'] rescue "Image non disponible"
     description = doc.search('.mt-4')&.text.strip rescue "Description non disponible"
 
