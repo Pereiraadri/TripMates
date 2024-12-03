@@ -28,9 +28,7 @@
             <% elsif choice.poll.category == "dates"%>
               <p>Du <%= choice.answer.split("to")[0] %> au <%= choice.answer.split("to")[1] %></p>
             <% elsif choice.poll.category == "destination"%>
-              <p><%= choice.answer %></p>
-            <% elsif choice.poll.category == "hebergement"%>
-              <p><%= choice.answer %> €</p>
+              <p><%= choice.answer.capitalize %></p>
             <% end %>
           </div>
         </div>
