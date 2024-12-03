@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   def index
     @groups = current_user.groups
     # @groups = current_user.groups
+    @groups = current_user.owned_groups
   end
 
   def create
