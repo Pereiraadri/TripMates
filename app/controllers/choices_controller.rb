@@ -7,7 +7,23 @@ class ChoicesController < ApplicationController
 
   # Méthode pour ajouter un hébergement à un sondage
   def create
-    poll = Poll.find(params[:poll_id])
+    @poll = Poll.find(params[:poll_id])
+    if !params[:choice][:url].nil?
+      url_scrapper
+    else
+      Choice.create!(
+        user: current_user,
+        poll: @poll,
+        answer: params[:choice][:answer]
+      )
+
+      redirect_to poll_path(@poll)
+    end
+  end
+
+  private
+
+  def url_scrapper
     url = params[:choice][:url]
 
     puts "----------------------------------------------"
@@ -27,23 +43,21 @@ class ChoicesController < ApplicationController
 
       # Créer le choix avec les informations extraites
       choice = Choice.new(
-        poll: poll,
+        poll: @poll,
         user: current_user,
         answer: metadata[:title],
         metadata: { url: url, image: metadata[:image], description: metadata[:description] }
       )
 
       if choice.save
-        redirect_to poll_path(poll), notice: "Hébergement ajouté avec succès."
+        redirect_to poll_path(@poll), notice: "Hébergement ajouté avec succès."
       else
-        redirect_to poll_path(poll), alert: "Impossible d'ajouter cet hébergement."
+        redirect_to poll_path(@poll), alert: "Impossible d'ajouter cet hébergement."
       end
     else
-      redirect_to poll_path(poll), alert: "Merci de renseigner une URL."
+      redirect_to poll_path(@poll), alert: "Merci de renseigner une URL."
     end
   end
-
-  private
 
   def extract_accommodation_details(url)
     html = URI.open(url)

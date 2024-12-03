@@ -4,12 +4,12 @@
 
   <div class="cover">
     <% if @group.cover_banner.attached? %>
-    <%= cl_image_tag @group.cover_banner.key, class: "cover-group-image" %>
+      <%= cl_image_tag @group.cover_banner.key, class: "image-cover-group" %>
     <% end %>
   </div>
 
   <div class="members">
-    <div class="group-memebers">
+    <div class="group-members">
       <h5 class="title">Membres actuels</h5>
     </div>
 
@@ -18,13 +18,12 @@
         <% @members.each_with_index do |member, i| %>
           <% if member.avatar.attached? %>
             <div class="avatar" style="transform: translateX(-<%= i * 50 %>%); z-index: <%= -i %>">
-            <%= image_tag member.avatar.variant(resize_to_limit: [10, 10]), alt: "#{member.email}'s avatar", class: "avatar-group" %>
+              <%= image_tag member.avatar.variant(resize_to_limit: [10, 10]), alt: "#{member.email}'s avatar", class: "avatar-group" %>
+            </div>
           <% else %>
             <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
           <% end %>
         <% end %>
-      </div>
-
       </div>
       <div class="menu">
         <% if @owner == current_user %>
@@ -35,7 +34,7 @@
                 <div data-controller="clipboard" data-clipboard-success-content-value="Lien copié !">
                   <input type="hidden" value="<%= invite_groups_url(invite_token: @group.invite_token) %>" data-clipboard-target="source" />
                   <button type="button" class="btn btn-light shadow-sm mt-8" data-action="clipboard#copy" data-clipboard-target="button">
-                  <i class="fa-regular fa-copy"></i>
+                    <i class="fa-regular fa-copy"></i>
                     Copier le lien d'invitation
                   </button>
                 </div>
@@ -47,9 +46,10 @@
         <% end %>
       </div>
     </div>
+
   </div>
 
-    <container class="text-cont">
+  <container class="text-cont">
     <div class="container-card-group-description">
       <p class="desc"><%= @group.description %></p>
     </div>
@@ -58,38 +58,35 @@
 
   <div class="go-to-polls">
     <div class="grid">
-
       <div class="row-icon">
         <div class="budget-poll-button">
           <%= link_to poll_path(@budget_poll), class: "icon-link" do %>
-          <i class="fa-solid fa-sack-dollar"></i>
+            <i class="fa-solid fa-sack-dollar"></i>
           <% end %>
         </div>
 
         <div class="destination-poll-button">
           <%= link_to poll_path(@destination_poll), class: "icon-link" do %>
-          <i class="fa-solid fa-umbrella-beach"></i>
+            <i class="fa-solid fa-umbrella-beach"></i>
           <% end %>
         </div>
       </div>
 
       <div class="row-icon">
-          <div class="dates-poll-button">
-            <%= link_to poll_path(@dates_poll), class: "icon-link" do %>
+        <div class="dates-poll-button">
+          <%= link_to poll_path(@dates_poll), class: "icon-link" do %>
             <i class="fa-solid fa-calendar"></i>
-            <% end %>
-          </div>
-
-          <div class="house-poll-button">
-            <% if @hebergement_poll.present?  %>
-              <%= link_to poll_path(@hebergement_poll), class: "icon-link" do %>
-                <i class="fa-solid fa-bed"></i>
-              <% end %>
-            <% else %>
+          <% end %>
+        </div>
+        <div class="house-poll-button">
+          <% if @hebergement_poll.present?  %>
+            <%= link_to poll_path(@hebergement_poll), class: "icon-link" do %>
               <i class="fa-solid fa-bed"></i>
             <% end %>
-
-          </div>
+          <% else %>
+            <i class="fa-solid fa-bed"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

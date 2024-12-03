@@ -1,29 +1,30 @@
 .button-pill {
-border-radius: 60px;
-box-shadow: var(--box-shadow-button);
-border: none;
-color: $light-beige;
-font-family: $body-font;
-font-weight: bold;
-padding-left: 32px;
-padding-right: 8px;
-padding-top: 4px;
-padding-bottom: 4px;
-justify-content: center;
-margin: 16px;
+  border-radius: 60px;
+  box-shadow: var(--box-shadow-button);
+  border: none;
+  color: $light-beige;
+  font-family: $body-font;
+  font-weight: bold;
+  padding-left: 32px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  justify-content: center;
+  margin: 16px;
 
-&.medium-green {
-  background-color: $medium-green;
+  &.medium-green {
+    background-color: $medium-green;
+  }
+
+  &.peach {
+    background-color: $peach;
+  }
+
+  &.sunset {
+    background-color: $sunset;
+  }
 }
 
-&.peach {
-  background-color: $peach;
-}
-
-&.sunset {
-  background-color: $sunset;
-}
-}
 .right-arrow {
   color: $light-beige;
   padding-left: 16px;
