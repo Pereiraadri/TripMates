@@ -2,15 +2,32 @@ import { Controller } from "@hotwired/stimulus"
 import Sortable from "sortablejs"
 // Connects to data-controller="sortable"
 export default class extends Controller {
+  static targets = ["list"]
   connect() {
-    const list = this.element
-    this.sortable = Sortable.create(this.element, {
+    const list = this.listTarget
+    this.sortable = Sortable.create(list, {
       animation: 150,
       onEnd: function toto(params) {
-        console.log("vpio");
+        console.log(list.children);
+
+        for (var i = 0; i < list.children.length; i++) {
+          console.log(i);
+
+          let li = list.children[i]; //second console output
+          console.log(li);
+
+          const id = li.dataset.choiceId
+          let input = document.querySelector(`#vote_choice_id_${id}`)
+          input.checked = false
+        }
+
         const id = list.children[0].dataset.choiceId
         console.log();
-        const input = document.querySelector(`#vote_choice_id_${id}`)
+        let input = document.querySelector(`#vote_choice_id_${id}`)
+        console.log(id);
+        console.log(input);
+
+
         input.checked = true
 
       }
