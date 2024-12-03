@@ -3,19 +3,19 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
+      confirmed: "Ton adresse email a été confirmée."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
+      already_authenticated: "Tu es déjà connecté."
+      inactive: "Ton compte n'est pas encore actif."
       invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account is locked."
+      locked: "Ton compte est bloqué."
+      last_attempt: "Il te reste une tentative avant que ton compte soit bloqué."
       not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      timeout: "Ta session a expiré. Connecte toi à nouveau pour continuer."
+      unauthenticated: "Tu dois te connecter pour pouvoir continuer."
+      unconfirmed: "Tu dois confirmer ton adresse email pour continuer."
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
