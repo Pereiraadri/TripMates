@@ -1,10 +1,5 @@
 <%= simple_form_for Vote.new, url: choice_votes_path(:choice_id), method: :post do |f| %>
-  <%= f.collection_radio_buttons :choice_id, @poll.choices, :id, :answer, item_wrapper_tag: :div do |b| %>
-    <div>
-      <%= b.radio_button %>
-      <%= b.label %>
-    </div>
-  <% end %>
+  <%= yield(f) %>
   <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill sunset">
         Valider mon vote

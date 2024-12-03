@@ -1,9 +1,9 @@
 <div class="card-box mb-4" style="max-width: 374px;">
-      <div class="card-card col justify-content-evenly">
-        <div class="image-card col-md-4">
-          <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
-          <i class="user-pic fa-solid fa-user"></i>
-        </div>
+  <div class="card-card col justify-content-evenly">
+    <div class="image-card col-md-4">
+      <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
+      <i class="user-pic fa-solid fa-user"></i>
+    </div>
     <div class="col-md-7">
       <div class="card-body">
         <h5 class="card-title">Budget</h5>
@@ -16,8 +16,11 @@
         </div>
       </div>
     </div>
+    <div class="check-box col-md-1" id="choice_square_<%= choice.id %>">
+      <span style="display: none">
+        <%= button.radio_button %>
+      </span>
 
-    <div class="check-box col-md-1">
       <i class="check-box-empty fa-regular fa-square"></i>
     </div>
   </div>
