@@ -11,9 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   def owner_groups
     Group.where(owner: self)
-    
   end
 end
