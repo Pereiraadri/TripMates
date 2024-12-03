@@ -33,7 +33,7 @@
   </div>
 </div>
 
- <%# <ul data-controller="sortable">
+<%# <ul data-controller="sortable">
     <li>toto</li>
     <li>tata</li>
     <li>tutu</li>
@@ -57,7 +57,7 @@
       <%= f.label :url, "Ajouter une URL d'hébergement" %>
       <%= f.text_field :url, placeholder: "https://www.tonurl.com/...", class: "form-control" %>
     </div>
-    <%= f.submit "Ajouter l'hébergement", class: "btn btn-primary" %>
+    <%= f.submit " l'hébergement", class: "btn btn-primary" %>
   <% end %>
 <% end %>
 <% @poll.choices.each do |choice| %>
