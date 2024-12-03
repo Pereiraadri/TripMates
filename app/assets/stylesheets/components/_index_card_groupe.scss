@@ -15,6 +15,7 @@
     margin: 2px;
     align-self: flex-start;
     margin-bottom: 16px;
+    margin-top: 50px;
   }
 }
 
@@ -36,6 +37,10 @@
   color: #ff8c00 !important;
 }
 
+.cover {
+  width: 374px;
+}
+
 .cover-group {
   display: flex;
   justify-content: center;
@@ -45,7 +50,7 @@
 .cover-group-image {
   border-radius: 12px;
   box-shadow: var(--box-shadow-image);
-  width: 100%;
+  width: 374px;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
@@ -55,8 +60,9 @@
   object-position: center;
   border-radius: 12px;
   box-shadow: var(--box-shadow-hard);
-  width: 374px;
-  margin: 8px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .index-medium-text {

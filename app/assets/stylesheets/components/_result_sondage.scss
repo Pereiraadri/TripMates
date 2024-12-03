@@ -70,3 +70,61 @@ img.avatar-group {
   width: 16px;
   height: 16px;
 }
+
+.container-results-hebergement {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.result-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px;
+  gap: 12px;
+}
+
+.result-hebergement {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-result-heb);
+  gap: 16px;
+}
+
+.answer-hebergement {
+  width: 100%;
+  font-family: $body-font;
+  color: $orange;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.progress-bar-hebergement {
+  width: 100%;
+  height: 12px;
+}
+
+.img-hbgt {
+  width: 100px;
+  max-height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatars-hebergement {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 8px;
+}
+.result-hebergement:first-child .percentage {
+  background-color: $medium-green;
+}
