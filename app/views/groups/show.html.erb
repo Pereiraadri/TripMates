@@ -39,7 +39,10 @@
                   </button>
                 </div>
               </a>
-              <%= link_to "Supprimer le groupe.", group_path(@group), data: {turbo_method: :delete } %>
+              <%= link_to "Supprimer le groupe.",
+               group_path(@group),
+               data: {turbo_method: :delete, controller: "confirm", confirmMessageValue: "Êtes-vous sûr de vouloir supprimer ce groupe ?" },
+              "data-action": "confirm#confirm" %>
               <%= link_to "Modifier le groupe.", edit_group_path(@group) %>
             </div>
           </div>
