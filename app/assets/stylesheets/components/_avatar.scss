@@ -1,15 +1,16 @@
 .avatar {
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 4px;
 }
 
 .avatar-large {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
 }
 
@@ -32,4 +33,13 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.avatar-result {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
