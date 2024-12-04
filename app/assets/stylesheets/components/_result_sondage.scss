@@ -58,7 +58,7 @@
 .title-sondage {
   font-family: $body-font;
   font-weight: bold;
-  color: $orange;
+  color: $sunset;
   font-size: 20px;
   text-align: center;
   margin-bottom: 32px;
@@ -83,6 +83,7 @@ img.avatar-group {
   justify-content: space-between;
   padding: 4px;
   gap: 12px;
+  padding: 8px;
 }
 
 .result-hebergement {

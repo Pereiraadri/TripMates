@@ -29,7 +29,17 @@
   color: $light-beige;
   padding-left: 16px;
 }
+
 .no-padding {
   padding-left: 24px;
   padding-right: 24px;
+}
+.form-actions {
+  border-radius: 12px;
+  border-color: $orange;
+  color: $light-beige;
+  width: 220px;
+  height: 40px;
+  text-align: center;
+  font-family: poppins, sans-serif;
 }
