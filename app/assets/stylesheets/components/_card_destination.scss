@@ -12,7 +12,7 @@
   font-weight: bold;
   font-size: 20px;
   display: flex;
-  word-wrap: break-word;
+  text-wrap: wrap;
   white-space: normal;
-  overflow-wrap: break-word;
+  word-break: break-all;
 }
