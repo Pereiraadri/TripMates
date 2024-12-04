@@ -1,9 +1,9 @@
+<% if poll.results.any? %>
 <div class="container-poll-result">
   <h5 class="title-sondage">
     Résultat <%= poll.category %>
   </h5>
   <div class="container-results-hebergement">
-    <% if poll.results.any? %>
       <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
         <div class="result-hebergement">
           <div class="image-hebergement">
@@ -36,6 +36,6 @@
           </div>
         </div>
       <% end %>
-    <% end %>
   </div>
 </div>
+<% end %>
