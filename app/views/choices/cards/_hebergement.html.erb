@@ -15,17 +15,21 @@
       </div>
 
       </div>
-      <div class="col-md-7">
+      <div class="content-hebergement">
         <div class="card-body">
           <h5 class="card-title"><%=choice.answer%>
           </h5>
-          <% if choice.poll.category == "hebergement"%>
+          <div class="content-description">
+            <% if choice.poll.category == "hebergement"%>
               <%= choice.metadata["description"].truncate(200) %>
             <% end %>
-          <p></p>
+          </div>
           <div class="small-text-heb">
-            <p class="card-text"><small class="text-body-secondary">321Km</small></p>
-            <p class="card-text"><small class="text-body-secondary">123€</small></p>
+            <p class="card-text"><small class="text-body-heb">
+              <% if choice.poll.category == "hebergement"%>
+                Prix: <%= choice.metadata["prix"] %>
+              <% end %>
+            </small></p>
           </div>
         </div>
       </div>
