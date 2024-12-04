@@ -13,6 +13,52 @@ export default class extends Controller {
         minDate: "today",
         inline: true,
         dateFormat: "d/m",
+        locale: {
+          firstDayOfWeek: 1,
+          weekdays: {
+            shorthand: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+            longhand: [
+              "Dimanche",
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+            ],
+          },
+          months: {
+            shorthand: [
+              "Jan",
+              "Fév",
+              "Mar",
+              "Avr",
+              "Mai",
+              "Juin",
+              "Juil",
+              "Août",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Déc",
+            ],
+            longhand: [
+              "Janvier",
+              "Février",
+              "Mars",
+              "Avril",
+              "Mai",
+              "Juin",
+              "Juillet",
+              "Août",
+              "Septembre",
+              "Octobre",
+              "Novembre",
+              "Décembre",
+            ],
+          },
+          rangeSeparator: " - ",
+        },
       })
     }
   }
