@@ -4,7 +4,8 @@
   font-weight: bold;
   margin-bottom: 16px;
 }
-.name-trip-banner{
+
+.name-trip-banner {
   text-decoration: none;
 }
 
@@ -14,6 +15,7 @@
   margin: 0px;
   font-weight: bold;
 }
+
 .group-image {
   font-family: helvetica !important;
   color: $sunset !important;
@@ -21,9 +23,10 @@
   font-weight: bold;
 
 }
-  // .name-trip-banner {
-  //   color: $medium-green !important;
-  // }
+
+// .name-trip-banner {
+//   color: $medium-green !important;
+// }
 .group-description-banner {
   width: 100%;
 }
@@ -43,16 +46,20 @@
 .invitation-link {
   border: none;
 }
+
 .lien-invitation {
   background-color: $light-beige !important;
 }
+
 .fa-copy {
   color: $medium-green;
 }
+
 .shadow-sm {
-  color:$sunset;
+  color: $sunset;
   background-color: $light-beige;
 }
+
 /////////////////////////////////////////////////////////////
 textarea {
   width: 100%;

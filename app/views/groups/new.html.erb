@@ -12,19 +12,25 @@
         <%= f.text_area :description, placeholder: "Décris ton groupe", class: "rounded-input" %>
       </div>
     </div>
-    <div class="group-image mb-16">
-      <%= f.label :cover_banner, value: "Photo du Groupe"%>
+
+    <div class="group-image mb-16" data-controller="image-preview">
+      <%= f.label :cover_banner, "Photo du Groupe" %>
       <div class="banner-image">
         <div class="picture-choice text-center">
-          <button type="button" class="btn btn-light shadow-sm"
-           onclick="document.getElementById('group_cover_banner').click()">Choisis une photo</button>
-          <%= f.file_field :cover_banner, class: 'form-text custom-file-input' %>
-          <%# <%= f.input :image, label:false, input_html: { class: 'form-text'}, as: :file %>
-
+          <button type="button" class="btn-photo btn-light shadow-sm "
+                  onclick="document.getElementById('group_cover_banner').click()">Choisis une photo</button>
+          <%= f.file_field :cover_banner, class: 'form-text custom-file-input', id: 'group_cover_banner', data: { image_preview_target: "input" },
+          "data-action" => "image-preview#preview",
+          style: "display: none;" %>
         </div>
 
+        <!-- Zone de prévisualisation -->
+        <div class="image-preview mt-3">
+          <img id="image-preview" data-image-preview-target="preview" src="#" alt="Prévisualisation de l'image" style="max-width: 100%; display: none; border-radius: 10px;"/>
+        </div>
       </div>
     </div>
+
    <%# bouton creer  %>
     <div class="button d-flex justify-content-center">
       <button type="submit" class="button-pill medium-green">
