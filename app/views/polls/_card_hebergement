@@ -1,0 +1,82 @@
+<% @poll.choices.each do |choice| %>
+  <div class="choice-card">
+    <h3><%= choice.answer %></h3>
+
+    <% if choice.metadata["image"].present? %>
+      <img src="<%= choice.metadata["image"] %>" alt="Hébergement" class="img-thumbnail">
+    <% end %>
+
+    <% if choice.metadata["price"].present? %>
+      <p><strong>Prix :</strong> <%= choice.metadata["price"] %></p>
+    <% end %>
+
+    <% if choice.metadata["description"].present? %>
+      <p><%= choice.metadata["description"].truncate(500) %></p>
+    <% end %>
+
+    <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
+  </div>
+<% end %>
+
+
+<div class="card-hebergement d-flex justify-content-center">
+  <div class="card-box mb-3" style="width: 344px;">
+    <div class="card-card row g-0">
+      <div class="drag col-md-1">
+        <i class="drag-icon fa-solid fa-grip-lines"></i>
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title">Description de la villa</h5>
+          <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <div class="small-text">
+            <p class="card-text"><small class="text-body-secondary">321Km</small></p>
+            <p class="card-text"><small class="text-body-secondary">123€</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="image-card col-md-4">
+        <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
+        <i class="user-pic fa-solid fa-user"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <ul data-controller="sortable">
+    <li>toto</li>
+    <li>tata</li>
+    <li>tutu</li>
+  </ul> %>
+
+<% @poll.choices.each do |choice| %>
+  <div class="choice-card">
+    <h3><%= choice.answer %></h3>
+    <% if choice.metadata["image"] %>
+      <img src="<%= choice.metadata["image"] %>" alt="Hébergement" class="img-thumbnail">
+    <% end %>
+    <p><%= choice.metadata["description"].truncate(500) %></p>
+    <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
+  </div>
+<% end %>
+
+  <h1 class="title"><%= @poll.title %></h1>
+<% if user_signed_in? && @poll.group.owner == current_user %>
+  <%= form_with url: create_accommodation_choice_poll_path(@poll), method: :post, local: true do |f| %>
+    <div class="mb-3">
+      <%= f.label :url, "Ajouter une URL d'hébergement" %>
+      <%= f.text_field :url, placeholder: "https://www.tonurl.com/...", class: "form-control" %>
+    </div>
+    <%= f.submit " l'hébergement", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+<% @poll.choices.each do |choice| %>
+  <div class="choice-card">
+    <h3><%= choice.answer %></h3>
+    <% if choice.metadata["image"] %>
+      <img src="<%= choice.metadata["image"] %>" alt="Hébergement" class="img-thumbnail">
+    <% end %>
+    <p><%= choice.metadata["description"].truncate(500) %></p>
+    <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
+  </div>
+<% end %>
