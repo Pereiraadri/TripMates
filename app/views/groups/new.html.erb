@@ -17,7 +17,7 @@
       <%= f.label :cover_banner, "Photo du Groupe" %>
       <div class="banner-image">
         <div class="picture-choice text-center">
-          <button type="button" class="btn-photo btn-light shadow-sm "
+          <button type="button" class="btn btn-light shadow-sm "
                   onclick="document.getElementById('group_cover_banner').click()">Choisis une photo</button>
           <%= f.file_field :cover_banner, class: 'form-text custom-file-input', id: 'group_cover_banner', data: { image_preview_target: "input" },
           "data-action" => "image-preview#preview",
