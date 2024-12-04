@@ -27,3 +27,11 @@
     left: -40px;
   }
 }
+.deconnecter {
+  text-decoration: none;
+  color: $sunset;
+}
+.deconnecter:hover {
+  color: $medium-green;
+  font-weight: bolder;
+}
