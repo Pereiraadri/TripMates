@@ -6,8 +6,13 @@
 }
 
 .card-medium-text-destination {
+  width: 100%;
   font-family: $body-font;
   color: $sunset;
   font-weight: bold;
   font-size: 20px;
+  display: flex;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
