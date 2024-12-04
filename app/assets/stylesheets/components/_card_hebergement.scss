@@ -11,13 +11,29 @@
     align-items: center;
     position: relative;
   }
+
   .card-body {
-    margin: 12px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+.content-hebergement {
+  width: 100%;
+  display: flex;
+}
+
+.content-description {
+  width: 300px;
+  display: flex;
+  justify-content: center;
 }
 
 .card-hebergement {
   .card-title {
+    width: 300px;
     font-family: $body-font;
     font-weight: bold;
     color: $sunset;
@@ -26,12 +42,25 @@
     font-family: $body-font;
     font-weight: lighter;
     font-size: 16px;
+    padding-left: 16px;
   }
 }
 
 .small-text-heb {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  font-family: $body-font;
+  color: $sunset;
+}
+
+.text-body-heb {
+  display: flex;
+  align-items: center;
+  font-family: $body-font;
+  font-weight: bold;
+  color: $sunset;
+  padding-right: 16px;
 }
 
 .img-fluid {

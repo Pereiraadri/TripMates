@@ -40,7 +40,7 @@ class ChoicesController < ApplicationController
       puts "Titre extrait : #{metadata[:title]}"
       puts "Image extraite : #{metadata[:image]}"
       puts "Description extraite : #{metadata[:description]}"
-
+      
       puts "Prix extrait : #{metadata[:prix]}"
       puts "metadata : #{metadata}"
 
@@ -50,7 +50,7 @@ class ChoicesController < ApplicationController
         poll: @poll,
         user: current_user,
         answer: metadata[:title],
-
+        
         metadata: { url: url, image: metadata[:image], description: metadata[:description], prix: metadata[:prix] }
       )
 
