@@ -87,3 +87,22 @@
 .sortable-container {
   margin-left: -40px;
 }
+
+.image-hebergement-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.img-hbgt-card{
+  width: 300px;
+  max-height: 200px;
+  border-radius: 12px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-hard);
+}
