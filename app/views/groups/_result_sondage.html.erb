@@ -1,38 +1,39 @@
-<div class="container-poll-result">
-  <h5 class="title-sondage">
-    Résultat <%= poll.category %>
-  </h5>
-  <div class="container-results">
-    <% if poll.results.any? %>
-      <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
-        <div class="result">
-          <div class="avatars">
-            <% choice.votes.each_with_index do |vote, i| %>
-              <div class="avatar" style="transform: translateX(-<%= i*50 %>%); z-index: <%= -i %>">
-                <% if vote.user.avatar.attached? %>
-                  <%= image_tag vote.user.avatar.variant(resize_to_limit: [10, 10]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
-                <% else %>
-                  <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
-                <% end %>
-              </div>
-            <% end %>
+<% if poll.results.any? %>
+  <%= link_to poll_path(poll), class:"container-poll-result" do %>
 
-          </div>
-          <div class="progress-bar">
-            <div class="percentage" style="width: <%= choice.percentage == 0 ? 5 : choice.percentage %>%">
+    <h5 class="title-sondage">
+      Résultat <%= poll.category %>
+    </h5>
+    <div class="container-results">
+        <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
+          <div class="result">
+            <div class="avatars">
+              <% choice.votes.each_with_index do |vote, i| %>
+                <div class="avatar" style="transform: translateX(-<%= i*50 %>%); z-index: <%= -i %>">
+                  <% if vote.user.avatar.attached? %>
+                    <%= image_tag vote.user.avatar.variant(resize_to_limit: [10, 10]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
+                  <% else %>
+                    <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
+                  <% end %>
+                </div>
+              <% end %>
+
+            </div>
+            <div class="progress-bar">
+              <div class="percentage" style="width: <%= choice.percentage == 0 ? 5 : choice.percentage %>%">
+              </div>
+            </div>
+            <div class="answer">
+              <% if choice.poll.category == "budget"%>
+                <p><%= choice.answer %> €</p>
+              <% elsif choice.poll.category == "dates"%>
+                <p>Du <%= choice.answer.split("to")[0] %> au <%= choice.answer.split("to")[1] %></p>
+              <% elsif choice.poll.category == "destination"%>
+                <p><%= choice.answer.capitalize %></p>
+              <% end %>
             </div>
           </div>
-          <div class="answer">
-            <% if choice.poll.category == "budget"%>
-              <p><%= choice.answer %> €</p>
-            <% elsif choice.poll.category == "dates"%>
-              <p>Du <%= choice.answer.split("to")[0] %> au <%= choice.answer.split("to")[1] %></p>
-            <% elsif choice.poll.category == "destination"%>
-              <p><%= choice.answer.capitalize %></p>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+        <% end %>
+    </div>
+  <% end %>
+<% end %>

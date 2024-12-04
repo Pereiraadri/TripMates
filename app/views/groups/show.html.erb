@@ -78,15 +78,19 @@
             <i class="fa-solid fa-calendar"></i>
           <% end %>
         </div>
-        <div class="house-poll-button">
           <% if @hebergement_poll.present?  %>
+        <div class="house-poll-button">
             <%= link_to poll_path(@hebergement_poll), class: "icon-link" do %>
               <i class="fa-solid fa-bed"></i>
             <% end %>
-          <% else %>
-            <i class="fa-solid fa-bed"></i>
-          <% end %>
         </div>
+          <% else %>
+            <div class="house-poll-button disabled">
+              <div class="icon-link ">
+                <i class="fa-solid fa-bed"></i>
+              </div>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
