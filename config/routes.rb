@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "groups#index"
+  match "*path", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 
   resources :groups do
     member do
