@@ -1,13 +1,23 @@
 <% @poll.choices.each do |choice| %>
   <div class="choice-card">
     <h3><%= choice.answer %></h3>
-    <% if choice.metadata["image"] %>
+
+    <% if choice.metadata["image"].present? %>
       <img src="<%= choice.metadata["image"] %>" alt="Hébergement" class="img-thumbnail">
     <% end %>
-    <p><%= choice.metadata["description"].truncate(500) %></p>
+
+    <% if choice.metadata["price"].present? %>
+      <p><strong>Prix :</strong> <%= choice.metadata["price"] %></p>
+    <% end %>
+
+    <% if choice.metadata["description"].present? %>
+      <p><%= choice.metadata["description"].truncate(500) %></p>
+    <% end %>
+
     <a href="<%= choice.metadata["url"] %>" target="_blank" class="btn btn-link">Voir l'hébergement</a>
   </div>
 <% end %>
+
 
 <div class="card-hebergement d-flex justify-content-center">
   <div class="card-box mb-3" style="width: 344px;">
