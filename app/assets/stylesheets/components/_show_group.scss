@@ -21,7 +21,7 @@
 .container-card-group-description {
   width: 374px;
   margin: 0px 16px;
-  box-shadow: var(--box-shadow-hard);
+  box-shadow: var(--box-shadow-result-heb);
   border-radius: 12px;
   margin-bottom: 32px;
 }
@@ -107,6 +107,9 @@ height: fit-content;
   height: 4rem;
   text-align: center;
   align-content: center;
+  &.disabled {
+    filter: blur(2px);
+  }
 }
 
 .members {

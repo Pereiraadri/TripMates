@@ -1,9 +1,15 @@
 <div class="tripmates-banner">
   <h2><strong>TripMates</strong></h2>
-  <div data-controller="menu" class="menu-icon">
-    <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-menu", data: { action: "click->menu#toggle" } %>
-    <div class="dropdown-menu" data-menu-target="dropdown">
-      <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn deconnecter btn-link", data: { confirm: "Es-tu sûr(e) de vouloir te déconnecter ?" } %>
+  <% if current_user %>
+    <div data-controller="menu" class="menu-icon">
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, alt: "user_avatar", class: "avatar-menu", data: { action: "click->menu#toggle" } %>
+      <% else %>
+        <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-menu", data: { action: "click->menu#toggle" } %>
+      <% end %>
+      <div class="dropdown-menu" data-menu-target="dropdown">
+        <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn deconnecter btn-link", data: { confirm: "Es-tu sûr(e) de vouloir te déconnecter ?" } %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
