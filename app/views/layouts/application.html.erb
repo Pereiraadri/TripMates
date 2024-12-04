@@ -10,10 +10,13 @@
     <%= yield :head %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+     <%= favicon_link_tag asset_path('logo.png') %>
+    <link rel="icon" href="/logo.png" type="image/png">
+    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/logo.png">
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css", media: "all" %>
+
     <%= javascript_importmap_tags %>
   </head>
 
@@ -23,7 +26,7 @@
     <div class="main-container container-fluid">
       <%= render "shared/flashes" %>
       <%= yield %>
-      <div class="footer" style="max-width: 810px;">
+      <div class="footer" style="max-width: 374px;">
         <%= render "layouts/footer" %>
       </div>
     </div>

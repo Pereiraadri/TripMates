@@ -3,13 +3,26 @@
     <div class="card-card row g-0">
       <div class="image-card col-md-4">
         <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
-        <i class="user-pic fa-solid fa-user"></i>
+        <% if @poll.results.any? %>
+          <% @poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
+          <% end %>
+        <% end %>
+
+      <div class="image-hebergement-card">
+        <% if choice.poll.category == "hebergement"%>
+            <img src="<%= choice.metadata["image"] %>" alt="img-hebergement" class="img-hbgt-card">
+        <% end %>
+      </div>
+
       </div>
       <div class="col-md-7">
         <div class="card-body">
           <h5 class="card-title"><%=choice.answer%>
           </h5>
-          <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <% if choice.poll.category == "hebergement"%>
+              <%= choice.metadata["description"].truncate(200) %>
+            <% end %>
+          <p></p>
           <div class="small-text-heb">
             <p class="card-text"><small class="text-body-secondary">321Km</small></p>
             <p class="card-text"><small class="text-body-secondary">123€</small></p>

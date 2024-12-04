@@ -40,19 +40,18 @@ class ChoicesController < ApplicationController
       puts "Titre extrait : #{metadata[:title]}"
       puts "Image extraite : #{metadata[:image]}"
       puts "Description extraite : #{metadata[:description]}"
+
       puts "Prix extrait : #{metadata[:prix]}"
+      puts "metadata : #{metadata}"
+
 
       # Créer le choix avec les informations extraites
       choice = Choice.new(
         poll: @poll,
         user: current_user,
         answer: metadata[:title],
-        metadata: {
-                    url: url,
-                    image: metadata[:image],
-                    description: metadata[:description],
-                    price: metadata[:price]
-                  }
+
+        metadata: { url: url, image: metadata[:image], description: metadata[:description], prix: metadata[:prix] }
       )
 
       if choice.save
@@ -72,9 +71,11 @@ class ChoicesController < ApplicationController
     title = doc.search('.tpy-headline-3')&.first&.text.strip rescue "Titre non disponible"
     image = doc.search('img.object-cover').first['src'] rescue "Image non disponible"
     description = doc.search('.mt-4')&.text.strip rescue "Description non disponible"
-    price = doc.search('.tpy-headline-5')&.text.strip rescue "Prix non disponible"
 
-    { title: title, image: image, description: description, price: price }
+    prix = doc.search('.tpy-headline-5.text-primary-500')&.text.strip rescue "Prix non disponible"
+
+    { title: title, image: image, description: description, prix: prix }
+
   rescue StandardError => e
     Rails.logger.error("Erreur lors de l'extraction des détails d'hébergement : #{e.message}")
     { title: "Hébergement non disponible", image: nil, description: "Aucune information disponible" }
