@@ -154,3 +154,26 @@ input[type="range"]:focus::-moz-range-thumb {
   top: 4px;
   left: 50%;
 }
+
+.container-input-hebergement {
+  width: 374px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.form-labell-hebergement{
+  font-family: $body-font;
+  color: $sunset;
+  font-weight: bold;
+  padding-left: 11px;
+}
+
+.form-control-hebergement {
+  height: 45px;
+  border: 2px solid $sunset;
+  border-radius: 8px;
+  background-color: $light-beige;
+  padding-left: 9px;
+}

@@ -11,7 +11,7 @@
     background-color: $light-beige !important;
     padding: 12px;
     border-radius: 12px;
-    box-shadow: var(--box-shadow-card);
+    box-shadow: var(--box-shadow-light);
     margin: 2px;
     align-self: flex-start;
     margin-bottom: 16px;
@@ -55,13 +55,14 @@
 
 .cover-group-image {
   border-radius: 12px;
-  box-shadow: var(--box-shadow-image);
+  box-shadow: var(--box-shadow-hard);
   width: 374px;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
 
 .image-cover-group {
+  width: 374px;
   object-fit: cover;
   object-position: center;
   border-radius: 12px;
@@ -87,7 +88,6 @@
     text-align: center;
     padding-top: 16px;
     padding-bottom: 16px;
-    box-shadow: 4px 4px 8px grey;
     border-radius: 12px;
   }
 

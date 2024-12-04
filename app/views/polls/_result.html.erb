@@ -3,7 +3,6 @@
     <div class="sortable-container" data-controller="form">
       <% if @poll.category == "hebergement" %>
         <div data-controller="sortable">
-
           <ul data-sortable-target="list">
             <% @poll.choices.each do |choice| %>
               <li data-choice-id="<%= choice.id %>"><%= render "choices/cards/#{@poll.category}", choice: choice %></li>
