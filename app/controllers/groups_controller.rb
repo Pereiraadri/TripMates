@@ -2,8 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show]
 
   def index
-    @group_owned = current_user.owned_groups
-    @groups = current_user.groups
+    @groups = current_user.owned_groups + current_user.groups
   end
 
   def create

@@ -1,29 +1,40 @@
-<%= simple_form_for [poll, choice] do |f| %>
-  <div class="form-group">
+<div class="cont-group-show-big">
+  <h1 class="title">Sondage budget</h1>
 
+  <div class="destination-poll-button-sondage">
+    <i class="fa-solid fa-sack-dollar"></i>
+  </div>
+
+  <div class="input-container">
+    <%= simple_form_for [poll, choice] do |f| %>
+  <div class="form-group">
     <div class="slider-container" style="position: relative;">
       <!-- Tooltip qui affichera la valeur du budget -->
       <div id="tooltip" class="tooltip">
         0€
       </div>
-      <%= f.input :answer, label: "Choisis ton budget.",
-                        as: :range,
-                        input_html: {
-                          min: 0,
-                          max: 2500,
-                          step: 10,
-                          id: 'budget_slider',
-                          value: 0,
-                          oninput: "document.getElementById('budget_value').innerText = this.value + '€';"
-                        } %>
+      <%= f.input :answer,
+                  label: "Choisis ton budget.",
+                  as: :range,
+                  input_html: {
+                    min: 0,
+                    max: 2500,
+                    step: 10,
+                    id: 'budget_slider',
+                    value: 0,
+                    class: 'custom-slider',
+                    oninput: "document.getElementById('budget_value').innerText = this.value + '€';"
+                  } %>
       <p>Montant sélectionné : <span id="budget_value">0€</span></p>
     </div>
   </div>
 
   <div class="button d-flex justify-content-center">
-    <button type="submit" class="button-pill sunset">
+    <button type="submit" class="button-pill sunset mb-5">
       Ajouter un nouveau choix
       <i class="right-arrow fa-regular fa-circle-right"></i>
     </button>
   </div>
-<% end %>
+    <% end %>
+  </div>
+</div>
