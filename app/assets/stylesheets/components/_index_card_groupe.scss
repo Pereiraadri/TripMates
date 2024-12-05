@@ -56,6 +56,7 @@
 .cover-group-image {
   border-radius: 12px;
   box-shadow: var(--box-shadow-hard);
+  object-fit: cover;
   width: 374px;
   overflow: hidden;
   aspect-ratio: 16/9;

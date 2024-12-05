@@ -1,7 +1,10 @@
 .cont-group-show-big {
   max-width: 100%;
   margin-bottom: 3px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cover {
