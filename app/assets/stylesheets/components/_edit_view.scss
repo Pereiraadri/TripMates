@@ -58,6 +58,15 @@
 .shadow-sm {
   color: $sunset;
   background-color: $light-beige;
+  border-radius: 4px;
+  border: 2px solid #E76F51;
+  font-family: "Poppins", "Helvetica", "sans-serif";
+}
+
+.shadow-sm:hover {
+  background-color: #2A9D8F;
+  color: #FCF5E0;
+  font-family: "Poppins", "Helvetica", "sans-serif";
 }
 
 /////////////////////////////////////////////////////////////

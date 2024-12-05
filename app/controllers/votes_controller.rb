@@ -7,7 +7,10 @@ class VotesController < ApplicationController
     @vote = current_user.votes.build(choice: @choice)
 
     if @vote.save
-      redirect_to group_path(@choice.poll.group), notice: "a Voté!"
+      if @choice.poll.category == "hebergement"
+        session[:show_confetti] = true
+      end
+      redirect_to group_path(@choice.poll.group), notice: "A voté!"
     else
       redirect_to group_path(@choice.poll.group), alert: "Tu as déja voté!"
     end

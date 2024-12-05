@@ -1,3 +1,9 @@
+<div class="cont-group-show-big">
+  <h1 class="title">Sondage hébergement</h1>
+
+  <div class="destination-poll-button-sondage">
+    <i class="fa-solid fa-bed"></i>
+  </div>
 
 <% if user_signed_in? && @poll.group.owner == current_user %>
 
@@ -6,21 +12,22 @@
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <!-- Champ pour le lien de l'hébergement -->
-    <div class="mb-3">
-      <label for="url" class="form-labell">Lien de l'hébergement</label>
+    <div class="container-input-hebergement">
+      <label for="url" class="form-labell-hebergement">Lien de l'hébergement</label>
       <input
         type="url"
         name="choice[url]"
         id="url"
         placeholder="URL de l'hébergement (Booking, Airbnb...)"
-        class="form-control"
+        class="form-control-hebergement"
         required
       >
     </div>
 
     <!-- Bouton de soumission -->
     <div class="text-center">
-      <button type="submit" class="button-pill medium-green no-padding">Ajouter l'hébergement</button>
-   </div>
+      <button type="submit" class="button-pill sunset no-padding">Ajouter l'hébergement</button>
+    </div>
   </form>
 <% end %>
+</div>

@@ -1,5 +1,4 @@
 class ChoicesController < ApplicationController
-
   def new
     @poll = Poll.find(params[:poll_id])
     @choice = Choice.new
@@ -8,9 +7,7 @@ class ChoicesController < ApplicationController
   # Méthode pour ajouter un hébergement à un sondage
   def create
     @poll = Poll.find(params[:poll_id])
-    if !params[:choice][:url].nil?
-      url_scrapper
-    else
+    if params[:choice][:url].nil?
       Choice.create!(
         user: current_user,
         poll: @poll,
@@ -18,6 +15,8 @@ class ChoicesController < ApplicationController
       )
 
       redirect_to poll_path(@poll)
+    else
+      url_scrapper
     end
   end
 
@@ -44,7 +43,6 @@ class ChoicesController < ApplicationController
       puts "Prix extrait : #{metadata[:prix]}"
       puts "metadata : #{metadata}"
 
-
       # Créer le choix avec les informations extraites
       choice = Choice.new(
         poll: @poll,
@@ -68,14 +66,29 @@ class ChoicesController < ApplicationController
     html = URI.open(url)
     doc = Nokogiri::HTML.parse(html)
 
-    title = doc.search('.tpy-headline-3')&.first&.text.strip rescue "Titre non disponible"
-    image = doc.search('img.object-cover').first['src'] rescue "Image non disponible"
-    description = doc.search('.mt-4')&.text.strip rescue "Description non disponible"
+    title = begin
+      doc.search('.tpy-headline-3')&.first&.text&.strip
+    rescue StandardError
+      "Titre non disponible"
+    end
+    image = begin
+      doc.search('img.object-cover').first['src']
+    rescue StandardError
+      "Image non disponible"
+    end
+    description = begin
+      doc.search('.mt-4')&.text&.strip
+    rescue StandardError
+      "Description non disponible"
+    end
 
-    prix = doc.search('.tpy-headline-5.text-primary-500')&.text.strip rescue "Prix non disponible"
+    prix = begin
+      doc.search('.tpy-headline-5.text-primary-500')&.text&.strip
+    rescue StandardError
+      "Prix non disponible"
+    end
 
     { title: title, image: image, description: description, prix: prix }
-
   rescue StandardError => e
     Rails.logger.error("Erreur lors de l'extraction des détails d'hébergement : #{e.message}")
     { title: "Hébergement non disponible", image: nil, description: "Aucune information disponible" }

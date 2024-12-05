@@ -1,13 +1,22 @@
 .card-destination-answer {
   display: flex;
   align-items: center;
-  padding: 0px 12px;
+  padding: 0px 8px;
   justify-content: space-between;
 }
 
 .card-medium-text-destination {
+  width: 100%;
   font-family: $body-font;
   color: $sunset;
   font-weight: bold;
   font-size: 20px;
+  display: flex;
+  text-wrap: wrap;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.card-destination-show-group {
+  white-space: nowrap;
 }
