@@ -1,27 +1,23 @@
 <div class="card-hebergement d-flex justify-content-center">
-  <div class="card-box mb-3" style="max-width: 374px;">
-    <div class="card-card row g-0">
-      <div class="image-card col-md-4">
+    <div class="card-hebergement-container">
+      <div class="image-hebergement-card">
         <%# <img src="..." class="img-fluid rounded-start" alt="...">%>
         <% if @poll.results.any? %>
           <% @poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
           <% end %>
         <% end %>
 
-      <div class="image-hebergement-card">
         <% if choice.poll.category == "hebergement"%>
             <img src="<%= choice.metadata["image"] %>" alt="img-hebergement" class="img-hbgt-card">
         <% end %>
       </div>
-
-      </div>
       <div class="content-hebergement">
         <div class="card-body">
-          <h5 class="card-title"><%=choice.answer%>
+          <h5 class="card-title"><%=choice.answer.truncate(24)%>
           </h5>
           <div class="content-description">
             <% if choice.poll.category == "hebergement"%>
-              <%= choice.metadata["description"].truncate(200) %>
+              <%= choice.metadata["description"].truncate(42) %>
             <% end %>
           </div>
           <div class="small-text-heb">
@@ -33,9 +29,9 @@
           </div>
         </div>
       </div>
+
       <div class="drag col-md-1" id="choice_square_<%= choice.id %>">
         <i class="drag-icon fa-solid fa-grip"></i>
       </div>
     </div>
-  </div>
 </div>
