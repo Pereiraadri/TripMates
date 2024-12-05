@@ -1,5 +1,5 @@
 <div class="card-box mb-4" style="max-width: 374px;">
-      <div class="card-card col justify-content-evenly">
+  <div class="card-card col justify-content-evenly">
 
     <div class="col-md-7">
       <div class="card-body">
@@ -18,7 +18,14 @@
         <%= button.radio_button %>
       </span>
 
-      <i class="check-box-empty fa-regular fa-square"></i>
+      <!-- Vérification si l'utilisateur a déjà voté pour cette option -->
+      <% if current_user.votes.exists?(choice_id: choice.id) %>
+        <!-- Case cochée si l'utilisateur a déjà voté -->
+        <i class="check-box-checked fa-solid fa-check-square"></i>
+      <% else %>
+        <!-- Case non cochée sinon -->
+        <i class="check-box-empty fa-regular fa-square"></i>
+      <% end %>
     </div>
   </div>
 </div>
