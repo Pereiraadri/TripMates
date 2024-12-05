@@ -11,7 +11,6 @@ export default class extends Controller {
       flatpickr("#range_start", {
         mode: "range",
         minDate: "today",
-        inline: true,
         dateFormat: "d/m",
       })
     }
