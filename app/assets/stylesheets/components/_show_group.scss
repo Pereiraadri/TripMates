@@ -166,8 +166,8 @@ height: fit-content;
   align-content: center;
 }
 .price-budget {
-  width: 88px;
+  width: 100%;
   color: $sunset;
   font-size: 20px;
-  padding-left: 2rem;
+  text-align: end;
 }
