@@ -8,7 +8,7 @@
         <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
           <div class="result">
             <div class="avatars">
-              <% choice.votes.each_with_index do |vote, i| %>
+              <% choice.votes.first(2).each_with_index do |vote, i| %>
                 <div class="avatar-result" style="transform: translateX(-<%= i*35 %>%); z-index: <%= -i %>">
                   <% if vote.user.avatar.attached? %>
                     <%= image_tag vote.user.avatar.variant(resize_to_limit: [500, 500]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
@@ -16,6 +16,9 @@
                     <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
                   <% end %>
                 </div>
+              <% end %>
+              <% if choice.votes.size >= 3 %>
+                <span class="instruction" style="transform: translateX(-25%); z-index: -3; text-wrap: nowrap;">+<%= choice.votes.size - 2%></span>
               <% end %>
 
             </div>
