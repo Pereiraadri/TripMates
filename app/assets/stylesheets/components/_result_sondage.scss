@@ -129,3 +129,11 @@ img.avatar-group {
 .result-hebergement:first-child .percentage {
   background-color: $medium-green;
 }
+
+.ul-result {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}

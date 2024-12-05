@@ -2,12 +2,12 @@
   position: fixed;
   bottom: 72px;
   right: 24px;
-  left: 200px;
+  left: 190px;
   z-index: 1000;
 }
 
 .alert-success {
-  width: 200px;
+  width: 220px;
   background-color: $medium-green;
   font-family: $body-font;
   color: $light-beige;
@@ -16,7 +16,7 @@
 }
 
 .alert-warning {
-  width: 200px;
+  width: 220px;
   background-color: $orange;
   font-family: $body-font;
   color: $light-beige;
