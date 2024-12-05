@@ -1,41 +1,43 @@
 <% if poll.results.any? %>
-<div class="container-poll-result">
-  <h5 class="title-sondage">
-    Résultat <%= poll.category %>
-  </h5>
-  <div class="container-results-hebergement">
-      <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
-        <div class="result-hebergement">
-          <div class="image-hebergement">
-            <% if choice.poll.category == "hebergement"%>
-                <img src="<%= choice.metadata["image"] %>" alt="img-hebergement" class="img-hbgt">
-            <% end %>
-          </div>
-          <div class="result-content">
-            <div class="answer-hebergement">
-              <% if choice.poll.category == "hebergement"%>
-                <p><%= choice.answer %></p>
-              <% end %>
-            </div>
-            <div class="progress-bar-hebergement">
-              <div class="percentage" style="width: <%= choice.percentage == 0 ? 5 : choice.percentage %>%">
+  <%= link_to poll_path(poll) do %>
+    <div class="container-poll-result">
+      <h5 class="title-sondage">
+        Résultat <%= poll.category %>
+      </h5>
+      <div class="container-results-hebergement">
+          <% poll.choices.sort_by { |choice| choice.votes.count }.reverse.each do |choice| %>
+            <div class="result-hebergement">
+              <div class="image-hebergement">
+                <% if choice.poll.category == "hebergement"%>
+                    <img src="<%= choice.metadata["image"] %>" alt="img-hebergement" class="img-hbgt">
+                <% end %>
               </div>
-            </div>
-            <div class="avatars-hebergement">
-              <% choice.votes.each_with_index do |vote, i| %>
-                <div class="avatar-result" style="transform: translateX(-<%= i*35 %>%); z-index: <%= -i %>">
-                  <% if vote.user.avatar.attached? %>
-                    <%= image_tag vote.user.avatar.variant(resize_to_limit: [500, 500]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
-                  <% else %>
-                    <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
+              <div class="result-content">
+                <div class="answer-hebergement">
+                  <% if choice.poll.category == "hebergement"%>
+                    <p><%= choice.answer %></p>
                   <% end %>
                 </div>
-              <% end %>
+                <div class="progress-bar-hebergement">
+                  <div class="percentage" style="width: <%= choice.percentage == 0 ? 5 : choice.percentage %>%">
+                  </div>
+                </div>
+                <div class="avatars-hebergement">
+                  <% choice.votes.each_with_index do |vote, i| %>
+                    <div class="avatar-result" style="transform: translateX(-<%= i*35 %>%); z-index: <%= -i %>">
+                      <% if vote.user.avatar.attached? %>
+                        <%= image_tag vote.user.avatar.variant(resize_to_limit: [500, 500]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
+                      <% else %>
+                        <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
+                      <% end %>
+                    </div>
+                  <% end %>
 
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      <% end %>
-  </div>
-</div>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
