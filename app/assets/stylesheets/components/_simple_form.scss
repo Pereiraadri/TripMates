@@ -7,6 +7,7 @@
   border-radius: 12px;
   background-color: white;
   border: solid 1px $sunset;
+  height: auto;
 }
 
 .label-destination {
@@ -66,9 +67,11 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
- -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
+  /* Override default look */
   appearance: none;
-  margin-top: -12px; /* Centers thumb on the track */
+  margin-top: -12px;
+  /* Centers thumb on the track */
 
   /*custom styles*/
   background-color: $light-green;
@@ -92,8 +95,10 @@ input[type="range"]::-moz-range-track {
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-  border: none; /*Removes extra border that FF applies*/
-  border-radius: 0; /*Removes default border-radius that FF applies*/
+  border: none;
+  /*Removes extra border that FF applies*/
+  border-radius: 0;
+  /*Removes default border-radius that FF applies*/
 
   /*custom styles*/
   background-color: $light-green;
@@ -129,7 +134,8 @@ input[type="range"]:focus::-moz-range-thumb {
   color: $dark-blue !important;
 }
 
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
   cursor: not-allowed;
   color: rgba(38, 70, 83, 0.1);
 }
@@ -142,7 +148,13 @@ input[type="range"]:focus::-moz-range-thumb {
   border-color: $light-green;
 }
 
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.notAllowed.nextMonthDay {
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.notAllowed,
+.flatpickr-day.notAllowed.prevMonthDay,
+.flatpickr-day.notAllowed.nextMonthDay {
   color: rgba(38, 70, 83, 0.3);
   background: transparent;
   border-color: transparent;
@@ -163,7 +175,7 @@ input[type="range"]:focus::-moz-range-thumb {
   padding-right: 16px;
 }
 
-.form-labell-hebergement{
+.form-labell-hebergement {
   font-family: $body-font;
   color: $sunset;
   font-weight: bold;

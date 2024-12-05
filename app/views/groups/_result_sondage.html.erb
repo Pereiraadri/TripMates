@@ -29,7 +29,7 @@
               <% elsif choice.poll.category == "dates"%>
                 <p>Du <%= choice.answer.split("-")[0] %> au <%= choice.answer.split("-")[1] %></p>
               <% elsif choice.poll.category == "destination"%>
-                <p><%= choice.answer.capitalize %></p>
+                <p class="card-destination-show-group"><%= choice.answer.capitalize %></p>
               <% end %>
             </div>
           </div>
