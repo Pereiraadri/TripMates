@@ -113,7 +113,8 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 #range_start {
-  background-color: white;
+  background-color: #FCF5E0;
+  border: solid 1px #E76F51;
   color: $sunset;
   border-radius: 12px;
   box-shadow: var(--box-shadow-card);
