@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   margin: 4px;
+  border: solid 2px $medium-green;
 }
 
 .avatar-large {
@@ -18,14 +19,14 @@
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border: white 1px solid;
+  border: solid 1px $medium-green;
 }
 
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border: white 1px solid;
+  border: solid 1px $medium-green;
 }
 
 .avatar-menu {
@@ -33,6 +34,7 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  border: solid 2px $medium-green;
 }
 
 .avatar-result {
