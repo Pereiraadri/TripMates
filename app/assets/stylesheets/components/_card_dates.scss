@@ -1,57 +1,58 @@
 .card-box {
-    background-color: $light-beige;
-    border-radius: 12px;
-    border: solid 2px $sunset;
-    box-shadow: var(--box-shadow-light);
+  background-color: $light-beige;
+  border-radius: 12px;
+  border: solid 2px $sunset;
+  box-shadow: var(--box-shadow-light);
 
-    .card-card {
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .card-body {
-      margin: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-    }
-
-    .card-title {
-      font-family: $body-font;
-      font-weight: bold;
-      color: $sunset;
-    }
-
-    .text-dates {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-medium-text {
-      width: 88px;
-      color: $sunset;
-      font-size: 20px;
-    }
-    .card-small-text {
-      width: 88px;
-      color: $sunset;
-      font-size: 16px;
-    }
-
-  }
-
-  .medium-text {
+  .card-card {
     display: flex;
-    // justify-content: space-evenly;
-    gap: 32px;
+    align-items: center;
+    position: relative;
   }
 
-  .small-text {
+  .card-body {
+    margin: 12px;
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    gap: 12px;
+
   }
+
+  .card-title {
+    font-family: $body-font;
+    font-weight: bold;
+    color: $sunset;
+  }
+
+  .text-dates {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-medium-text {
+    width: 88px;
+    color: $sunset;
+    font-size: 20px;
+  }
+
+  .card-small-text {
+    width: 88px;
+    color: $sunset;
+    font-size: 16px;
+  }
+
+}
+
+.medium-text {
+  display: flex;
+  // justify-content: space-evenly;
+  gap: 32px;
+}
+
+.small-text {
+  display: flex;
+  gap: 32px;
+}
 
 .img-fluid {
   margin: 12px;
@@ -71,6 +72,15 @@
 
 .check-box {
   .check-box-empty {
+    text-align: center;
+    color: $sunset;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .check-box-checked {
     text-align: center;
     color: $sunset;
     font-size: 24px;
