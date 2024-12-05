@@ -10,7 +10,7 @@
 
   <div class="members">
     <div class="group-members">
-      <h5 class="title">Membres actuels</h5>
+      <h5 class="title">Membres actuelssss</h5>
     </div>
 
     <div class="container-avatar">
@@ -18,7 +18,7 @@
         <% @members.each_with_index do |member, i| %>
           <div class="avatar-large" style="transform: translateX(-<%= i * 50 %>%); z-index: <%= -i %>">
             <% if member.avatar.attached? %>
-              <%= image_tag member.avatar.variant(resize_to_limit: [10, 10]), alt: "#{member.email}'s avatar", class: "avatar-group" %>
+              <%= image_tag member.avatar.variant(resize_to_limit: [500, 500]), alt: "#{member.email}'s avatar", class: "avatar-group" %>
             <% else %>
               <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
             <% end %>
