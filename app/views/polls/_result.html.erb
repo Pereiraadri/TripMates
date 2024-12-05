@@ -16,7 +16,7 @@
           <% end %>
         </div>
       <% else %>
-        <ul>
+        <ul class="ul-result">
           <%= f.collection_radio_buttons :choice_id, @poll.choices.reverse, :id, :answer, item_wrapper_tag: :div do |b| %>
             <li data-action="click->form#click" data-choice-id="<%= b.object.id %>"><%= render "choices/cards/#{@poll.category}", choice: b.object, button: b %></li>
           <% end %>
