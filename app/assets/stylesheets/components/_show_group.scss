@@ -154,3 +154,20 @@ height: fit-content;
 .avatars-show-group {
   display: flex;
 }
+.poll-sondage {
+  font-size: 2rem;
+  color: $sunset;
+  width: 3rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
+
+  height: 3rem;
+  text-align: center;
+  align-content: center;
+}
+.price-budget {
+  width: 88px;
+  color: $sunset;
+  font-size: 20px;
+  padding-left: 2rem;
+}
