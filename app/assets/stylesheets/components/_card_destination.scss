@@ -6,8 +6,17 @@
 }
 
 .card-medium-text-destination {
+  width: 100%;
   font-family: $body-font;
   color: $sunset;
   font-weight: bold;
   font-size: 20px;
+  display: flex;
+  text-wrap: wrap;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.card-destination-show-group {
+  white-space: nowrap;
 }

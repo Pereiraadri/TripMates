@@ -10,7 +10,7 @@ class VotesController < ApplicationController
       if @choice.poll.category == "hebergement"
         session[:show_confetti] = true
       end
-      redirect_to group_path(@choice.poll.group), notice: "a Voté!"
+      redirect_to group_path(@choice.poll.group), notice: "A voté!"
     else
       redirect_to group_path(@choice.poll.group), alert: "Tu as déja voté!"
     end
