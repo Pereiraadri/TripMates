@@ -1,0 +1,11 @@
+<% if session[:show_confetti] %>
+<script>
+    // Utilisation d'une librairie comme Canvas Confetti ou Party.js
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+</script>
+<% session[:show_confetti] = nil %>
+<% end %>

@@ -11,3 +11,5 @@ pin "@popperjs/core", to: "popper.js", preload: true
 pin "flatpickr" # @4.6.13
 pin "@stimulus-components/clipboard", to: "@stimulus-components--clipboard.js" # @5.0.0
 pin "sortablejs" # @1.15.6
+pin "stimulus-confetti" # @1.0.1
+pin "canvas-confetti" # @1.9.3
