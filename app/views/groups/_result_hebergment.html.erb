@@ -25,7 +25,7 @@
               <% choice.votes.each_with_index do |vote, i| %>
                 <div class="avatar-result" style="transform: translateX(-<%= i*35 %>%); z-index: <%= -i %>">
                   <% if vote.user.avatar.attached? %>
-                    <%= image_tag vote.user.avatar.variant(resize_to_limit: [10, 10]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
+                    <%= image_tag vote.user.avatar.variant(resize_to_limit: [500, 500]), alt: "#{vote.user.email}'s avatar", class: "avatar-group" %>
                   <% else %>
                     <%= image_tag "default_avatar.png", alt: "user_avatar", class: "avatar-group" %>
                   <% end %>
