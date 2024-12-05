@@ -1,26 +1,28 @@
-<div class="cont-group-show-big">
-  <% if @poll.category == "budget" %>
-    <h1 class="title">Sondage budget</h1>
-    <div class="destination-poll-button-sondage">
-      <i class="fa-solid fa-sack-dollar"></i>
-    </div>
-  <% elsif @poll.category == "dates" %>
-    <h1 class="title">Sondage dates</h1>
-    <div class="destination-poll-button-sondage">
-      <i class="fa-solid fa-calendar"></i>
-    </div>
-  <% elsif @poll.category == "destination" %>
-    <h1 class="title">Sondage destination</h1>
-    <div class="destination-poll-button-sondage">
-      <i class="fa-solid fa-umbrella-beach"></i>
-    </div>
-  <% elsif @poll.category == "hebergement" %>
-    <h1 class="title">Sondage hébergement</h1>
-    <div class="destination-poll-button-sondage">
-      <i class="fa-solid fa-bed"></i>
-    </div>
-  <% end %>
-</div>
+<% if user_signed_in? && @poll.group.owner != current_user %>
+  <div class="cont-group-show-big">
+    <% if @poll.category == "budget" %>
+      <h1 class="title">Sondage budget</h1>
+      <div class="destination-poll-button-sondage">
+        <i class="fa-solid fa-sack-dollar"></i>
+      </div>
+    <% elsif @poll.category == "dates" %>
+      <h1 class="title">Sondage dates</h1>
+      <div class="destination-poll-button-sondage">
+        <i class="fa-solid fa-calendar"></i>
+      </div>
+    <% elsif @poll.category == "destination" %>
+      <h1 class="title">Sondage destination</h1>
+      <div class="destination-poll-button-sondage">
+        <i class="fa-solid fa-umbrella-beach"></i>
+      </div>
+    <% elsif @poll.category == "hebergement" %>
+      <h1 class="title">Sondage hébergement</h1>
+      <div class="destination-poll-button-sondage">
+        <i class="fa-solid fa-bed"></i>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @poll.choices.any? %>
   <%= render "poll" do |f| %>
